@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  color: black; }
+
+@font-face {
+  font-family: 'News Gothic';
+  src: url("webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("webfont.eot?#iefix") format("embedded-opentype"), url("webfont.woff2") format("woff2"), url("webfont.woff") format("woff"), url("../fonts/news-gothic.ttf") format("truetype"), url("webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+/* Legacy */
+#MainMenu a:link {
+  color: #000;
+  font-weight: bold;
+  text-decoration: none; }
+#MainMenu a:visited {
+  text-decoration: none;
+  color: #333; }
+#MainMenu a:hover {
+  text-decoration: none;
+  color: #3CF; }
+#MainMenu a:active {
+  text-decoration: none;
+  color: #999; }
+
+/* /Legacy */
+.woocommerce .products {
+  margin-top: 40px !important;
+  margin-left: 285px !important; }
+  .woocommerce .products .product {
+    width: auto !important;
+    margin-bottom: 0 !important; }
+    .woocommerce .products .product .textBookTitle {
+      color: black;
+      display: block;
+      margin: 10px 0 0 -13px; }
+    .woocommerce .products .product .textNormal {
+      color: black;
+      margin-left: -13px;
+      display: block; }
+    .woocommerce .products .product .textNormalSmall {
+      margin-top: 16px;
+      margin-left: -13px;
+      display: block; }
+    .woocommerce .products .product .product-price {
+      margin-top: -10px; }
+    .woocommerce .products .product .button {
+      margin-left: -13px;
+      background-color: black;
+      color: white;
+      font-family: Arial;
+      text-transform: uppercase;
+      font-family: 'News Gothic';
+      letter-spacing: 1px;
+      font-size: 10px;
+      border-radius: 0;
+      padding: 6px; }
+    .woocommerce .products .product hr {
+      margin-left: -13px;
+      margin-top: 40px;
+      margin-bottom: 20px; }
+    .woocommerce .products .product .product-img-wrap {
+      width: 204px;
+      display: inline-block;
+      height: 193px;
+      text-align: right; }
+      .woocommerce .products .product .product-img-wrap img {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto; }
+    .woocommerce .products .product .product-details {
+      width: 480px;
+      vertical-align: top;
+      display: inline-block; }
+
+/*# sourceMappingURL=app.css.map */
