@@ -24,28 +24,111 @@ body {
   color: #999; }
 
 /* /Legacy */
-.woocommerce .products {
+.archive .products {
   margin-top: 40px !important;
-  margin-left: 285px !important; }
-  .woocommerce .products .product {
+  margin-left: 270px !important; }
+  .archive .products .product {
     width: auto !important;
-    margin-bottom: 0 !important; }
-    .woocommerce .products .product .textBookTitle {
+    margin-bottom: 0 !important;
+    display: table;
+    float: none !important; }
+    .archive .products .product div > a {
+      display: table-cell; }
+      .archive .products .product div > a .product-img-wrap {
+        width: 204px;
+        display: inline-block;
+        max-height: 193px;
+        text-align: right; }
+        .archive .products .product div > a .product-img-wrap img {
+          display: inline-block;
+          max-width: 100%;
+          max-height: 100%;
+          width: auto;
+          height: auto;
+          margin-bottom: 0;
+          vertical-align: top; }
+    .archive .products .product div .product-details {
+      padding-left: 10px;
+      display: table-cell;
+      vertical-align: middle;
+      width: 480px; }
+      .archive .products .product div .product-details .textBookTitle {
+        color: black;
+        display: block; }
+      .archive .products .product div .product-details .textNormal {
+        color: black;
+        display: block; }
+      .archive .products .product div .product-details .textNormalSmall {
+        margin-top: 16px;
+        display: block; }
+      .archive .products .product div .product-details .out-of-stock {
+        color: red;
+        margin-top: 10px; }
+      .archive .products .product div .product-details .product-price {
+        margin-top: -10px; }
+      .archive .products .product div .product-details .button {
+        background-color: black;
+        color: white;
+        font-family: Arial;
+        text-transform: uppercase;
+        font-family: 'News Gothic';
+        letter-spacing: 1px;
+        font-size: 10px;
+        border-radius: 0;
+        padding: 6px;
+        margin-top: 10px;
+        display: inline-block; }
+    .archive .products .product hr {
+      width: 480px;
+      margin: 25px 0 25px 214px; }
+
+.single-product .product {
+  margin-top: 40px !important;
+  margin-left: 270px !important;
+  width: auto !important;
+  margin-bottom: 0 !important;
+  display: table;
+  float: none !important; }
+  .single-product .product .images {
+    display: table-cell;
+    width: auto !important;
+    float: none !important;
+    vertical-align: top; }
+    .single-product .product .images a {
+      width: 204px;
+      display: inline-block;
+      max-height: 193px;
+      text-align: right; }
+      .single-product .product .images a img {
+        display: inline-block !important;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto !important;
+        height: auto;
+        margin-bottom: 0;
+        vertical-align: top; }
+  .single-product .product .summary {
+    float: none !important;
+    display: table-cell;
+    width: auto !important;
+    padding-left: 10px;
+    vertical-align: middle;
+    width: 480px; }
+    .single-product .product .summary .textBookTitle {
       color: black;
-      display: block;
-      margin: 10px 0 0 -13px; }
-    .woocommerce .products .product .textNormal {
-      color: black;
-      margin-left: -13px;
       display: block; }
-    .woocommerce .products .product .textNormalSmall {
+    .single-product .product .summary .textNormal {
+      color: black;
+      display: block; }
+    .single-product .product .summary .textNormalSmall {
       margin-top: 16px;
-      margin-left: -13px;
       display: block; }
-    .woocommerce .products .product .product-price {
+    .single-product .product .summary .out-of-stock {
+      color: red;
+      margin-top: 10px; }
+    .single-product .product .summary .product-price {
       margin-top: -10px; }
-    .woocommerce .products .product .button {
-      margin-left: -13px;
+    .single-product .product .summary .button {
       background-color: black;
       color: white;
       font-family: Arial;
@@ -54,25 +137,19 @@ body {
       letter-spacing: 1px;
       font-size: 10px;
       border-radius: 0;
-      padding: 6px; }
-    .woocommerce .products .product hr {
-      margin-left: -13px;
-      margin-top: 40px;
-      margin-bottom: 20px; }
-    .woocommerce .products .product .product-img-wrap {
-      width: 204px;
+      padding: 6px;
+      margin-top: 10px;
       display: inline-block;
-      height: 193px;
-      text-align: right; }
-      .woocommerce .products .product .product-img-wrap img {
-        display: inline-block;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto;
-        height: auto; }
-    .woocommerce .products .product .product-details {
-      width: 480px;
-      vertical-align: top;
-      display: inline-block; }
+      -webkit-font-smoothing: auto; }
+    .single-product .product .summary .cart {
+      margin-bottom: 0; }
+      .single-product .product .summary .cart .quantity {
+        display: none; }
+  .single-product .product hr {
+    width: 480px;
+    margin: 25px 0 25px 214px; }
+  .single-product .product .book-description {
+    width: 480px;
+    margin: 25px 0 25px 214px; }
 
 /*# sourceMappingURL=app.css.map */

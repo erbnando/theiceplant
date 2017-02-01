@@ -20,4 +20,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-the_title( '<h1 itemprop="name" class="product_title entry-title">', '</h1>' );
+the_title( '<span class="textBookTitle">', '</span>' );
+echo '<span class="textNormal">' . get_field('author') . '</span>';
+echo '<span class="textNormalSmall">' . get_field('details') . '</span>';

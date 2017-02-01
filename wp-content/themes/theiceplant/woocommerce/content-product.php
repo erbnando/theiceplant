@@ -28,54 +28,59 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 }
 ?>
 <li <?php post_class(); ?>>
-	<?php
-	/**
-	 * woocommerce_before_shop_loop_item hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-	?>
-		<div class="product-img-wrap">
+	<div>
 		<?php
 		/**
-		 * woocommerce_before_shop_loop_item_title hook.
+		 * woocommerce_before_shop_loop_item hook.
 		 *
-		 * @hooked woocommerce_show_product_loop_sale_flash - 10
-		 * @hooked woocommerce_template_loop_product_thumbnail - 10
+		 * @hooked woocommerce_template_loop_product_link_open - 10
 		 */
-		do_action( 'woocommerce_before_shop_loop_item_title' );
+		do_action( 'woocommerce_before_shop_loop_item' );
+		?>
+			<div class="product-img-wrap">
+			<?php
+			/**
+			 * woocommerce_before_shop_loop_item_title hook.
+			 *
+			 * @hooked woocommerce_show_product_loop_sale_flash - 10
+			 * @hooked woocommerce_template_loop_product_thumbnail - 10
+			 */
+			do_action( 'woocommerce_before_shop_loop_item_title' );
+			?>
+			</div>
+		</a>
+		<div class="product-details">
+		<?php
+		/**
+		 * woocommerce_shop_loop_item_title hook.
+		 *
+		 * @hooked woocommerce_template_loop_product_title - 10
+		 */
+		do_action( 'woocommerce_shop_loop_item_title' );
+
+		/**
+		 * woocommerce_after_shop_loop_item_title hook.
+		 *
+		 * @hooked woocommerce_template_loop_rating - 5
+		 * @hooked woocommerce_template_loop_price - 10
+		 */
+		do_action( 'woocommerce_after_shop_loop_item_title' );
+	    if ( $product->is_in_stock() ) {
+			woocommerce_template_loop_add_to_cart();
+	    } else {
+	    	echo '<span class="textNormalSmall out-of-stock">OUT OF PRINT</span>';
+	    }
 		?>
 		</div>
-	</a>
-
-	<div class="product-details">
-	<?php
-	/**
-	 * woocommerce_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * woocommerce_after_shop_loop_item_title hook.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-	woocommerce_template_loop_add_to_cart();
-	?>
-	<hr>
+		<?php
+		/**
+		 * woocommerce_after_shop_loop_item hook.
+		 *
+		 * @hooked woocommerce_template_loop_product_link_close - 5
+		 * @hooked woocommerce_template_loop_add_to_cart - 10
+		 */
+		// do_action( 'woocommerce_after_shop_loop_item' );
+		?>
 	</div>
-	<?php
-	/**
-	 * woocommerce_after_shop_loop_item hook.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	// do_action( 'woocommerce_after_shop_loop_item' );
-	?>
+	<hr>
 </li>

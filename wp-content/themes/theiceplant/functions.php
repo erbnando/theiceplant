@@ -33,4 +33,12 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
      return $currency_symbol;
 }
 
+// Disable product review (tab)
+function woo_remove_product_tabs($tabs) {
+	unset($tabs['reviews']);
+	return $tabs;
+}
+
+add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
 ?>
