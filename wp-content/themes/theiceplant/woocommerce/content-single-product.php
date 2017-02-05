@@ -80,11 +80,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
-	<hr>
+	<hr class="above-desc">
 
-	<?php echo '<div class="book-description">';
+	<?php 
+	echo '<div class="book-description textNormal">';
 	echo the_content();
-	echo '</div>'; ?>
+	echo '</div>'; 
+
+	if (get_field('about_author')) {
+		echo '<hr>';
+		echo '<div class="about-author textNormalSmall">';
+		echo get_field('about_author');
+		echo '</div>';
+	}
+
+	if (get_field('image_gallery')) {
+		echo '<hr>';
+		echo '<div class="image-gallery">';
+		echo '<img src="' . get_field('image_gallery') . '" />';
+		echo '</div>';
+	}
+	?>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 

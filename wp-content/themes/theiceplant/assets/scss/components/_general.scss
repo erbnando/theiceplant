@@ -1,14 +1,38 @@
 body {
-	margin: 0;
+	margin: 0 0 60px 0;
 	color: black;
+	min-width: 320px;
+	box-sizing: border-box;
 }
 
 @font-face {
 	font-family: 'News Gothic';
-	src: url('webfont.eot'); /* IE9 Compat Modes */
-	src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-		url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
-		url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+	src: url('../fonts/news-gothic.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/news-gothic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		// url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/news-gothic.woff') format('woff'), /* Pretty Modern Browsers */
 		url('../fonts/news-gothic.ttf')  format('truetype'), /* Safari, Android, iOS */
-		url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+		// url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+a:link {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333;
+}
+a:hover {
+	text-decoration: none;
+	color: #3CF;
+}
+a:active {
+	text-decoration: none;
+	color: #999;
+}
+
+hr {
+	box-sizing: border-box;
 }
