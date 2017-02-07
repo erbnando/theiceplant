@@ -32,75 +32,196 @@ hr {
 .archive .products {
   margin-top: 40px !important;
   margin-left: 270px !important; }
-  @media screen and (max-width: 999px) {
+  @media screen and (max-width: 899px) {
     .archive .products {
       margin-left: 0 !important;
       margin-top: 220px !important; } }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 599px) {
     .archive .products {
       padding: 0 25px !important; } }
   .archive .products .product {
     width: auto !important;
     margin: 0 !important;
     display: table;
-    float: none !important; }
-    @media screen and (max-width: 767px) {
+    float: none !important;
+    font-size: 0;
+    padding-right: 25px !important; }
+    @media screen and (max-width: 599px) {
       .archive .products .product {
         width: 100% !important; } }
-    .archive .products .product > div > a {
-      display: table-cell; }
-      .archive .products .product > div > a .product-img-wrap {
+    .archive .products .product > div {
+      display: inline-block; }
+      .archive .products .product > div > a {
+        display: table-cell; }
+        .archive .products .product > div > a .product-img-wrap {
+          width: 179px;
+          margin-left: 25px;
+          display: inline-block;
+          max-height: 193px;
+          text-align: right; }
+          @media screen and (max-width: 599px) {
+            .archive .products .product > div > a .product-img-wrap {
+              width: auto;
+              margin-left: 0; } }
+          .archive .products .product > div > a .product-img-wrap img {
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            margin-bottom: 0;
+            vertical-align: top; }
+      .archive .products .product > div .product-details {
+        padding-left: 10px;
+        display: table-cell;
+        vertical-align: middle;
+        width: 480px;
+        font-size: 0;
+        max-width: 100%; }
+        @media screen and (max-width: 599px) {
+          .archive .products .product > div .product-details {
+            display: block;
+            padding-left: 0;
+            margin-top: 15px;
+            width: 100%; } }
+        .archive .products .product > div .product-details .textBookTitle {
+          color: black; }
+          @media screen and (max-width: 599px) {
+            .archive .products .product > div .product-details .textBookTitle {
+              width: 100% !important; } }
+          .archive .products .product > div .product-details .textBookTitle .subtitle {
+            font-size: 10px;
+            letter-spacing: normal; }
+        .archive .products .product > div .product-details .textNormal {
+          color: black;
+          line-height: normal; }
+          @media screen and (max-width: 599px) {
+            .archive .products .product > div .product-details .textNormal {
+              width: 100% !important; } }
+        .archive .products .product > div .product-details .textNormalSmall {
+          display: inline-block;
+          margin-top: 16px; }
+          .archive .products .product > div .product-details .textNormalSmall p {
+            margin-top: 0 !important; }
+          @media screen and (max-width: 599px) {
+            .archive .products .product > div .product-details .textNormalSmall {
+              width: 100% !important; } }
+        .archive .products .product > div .product-details .out-of-stock {
+          color: red;
+          margin-top: 0; }
+        .archive .products .product > div .product-details .product-price {
+          margin-top: -10px;
+          vertical-align: top; }
+        .archive .products .product > div .product-details .button {
+          background-color: black;
+          color: white;
+          font-family: Arial;
+          text-transform: uppercase;
+          font-family: 'News Gothic';
+          letter-spacing: 1px;
+          font-size: 11px;
+          border-radius: 0;
+          padding: 5px;
+          margin-top: 10px;
+          display: inline-block; }
+          .archive .products .product > div .product-details .button.loading:after {
+            display: none; }
+        .archive .products .product > div .product-details .added_to_cart {
+          display: table-cell;
+          font-family: 'News Gothic';
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding-top: 8px; }
+    .archive .products .product hr {
+      margin: 25px 0 25px 214px; }
+      @media screen and (max-width: 599px) {
+        .archive .products .product hr {
+          width: 100%;
+          margin: 25px 0 25px 0; } }
+
+@media screen and (max-width: 719px) {
+  .single-product {
+    padding: 0 25px !important; } }
+.single-product .product {
+  margin-top: 40px !important;
+  margin-left: 270px !important;
+  width: auto !important;
+  margin-bottom: 0 !important;
+  display: table;
+  float: none !important;
+  padding-right: 30px; }
+  @media screen and (max-width: 899px) {
+    .single-product .product {
+      margin-left: 0 !important;
+      margin-top: 220px !important; } }
+  @media screen and (max-width: 719px) {
+    .single-product .product {
+      width: 100% !important;
+      display: block; } }
+  .single-product .product > div {
+    position: relative;
+    display: inline-block;
+    vertical-align: top; }
+    .single-product .product > div .images {
+      display: table-cell;
+      width: auto !important;
+      float: none !important;
+      vertical-align: top; }
+      .single-product .product > div .images a {
         width: 204px;
         display: inline-block;
         max-height: 193px;
         text-align: right; }
-        @media screen and (max-width: 767px) {
-          .archive .products .product > div > a .product-img-wrap {
+        @media screen and (max-width: 719px) {
+          .single-product .product > div .images a {
             width: auto; } }
-        .archive .products .product > div > a .product-img-wrap img {
-          display: inline-block;
+        .single-product .product > div .images a img {
+          display: inline-block !important;
           max-width: 100%;
           max-height: 100%;
-          width: auto;
+          width: auto !important;
           height: auto;
           margin-bottom: 0;
           vertical-align: top; }
-    .archive .products .product > div .product-details {
-      padding-left: 10px;
+    .single-product .product > div div.summary {
+      float: none !important;
       display: table-cell;
+      padding-left: 10px;
       vertical-align: middle;
-      width: 480px; }
-      @media screen and (max-width: 767px) {
-        .archive .products .product > div .product-details {
+      margin-bottom: 10px !important;
+      width: 480px;
+      font-size: 0;
+      max-width: 100%; }
+      @media screen and (max-width: 719px) {
+        .single-product .product > div div.summary {
           display: block;
           padding-left: 0;
           margin-top: 15px;
-          width: 100%; } }
-      .archive .products .product > div .product-details .textBookTitle {
-        color: black;
-        display: block; }
-        @media screen and (max-width: 767px) {
-          .archive .products .product > div .product-details .textBookTitle {
+          width: 100% !important; } }
+      .single-product .product > div div.summary .textBookTitle {
+        color: black; }
+        @media screen and (max-width: 599px) {
+          .single-product .product > div div.summary .textBookTitle {
             width: 100% !important; } }
-      .archive .products .product > div .product-details .textNormal {
+        .single-product .product > div div.summary .textBookTitle .subtitle {
+          font-size: 10px;
+          letter-spacing: normal; }
+      .single-product .product > div div.summary .textNormal {
         color: black;
-        display: block;
         line-height: normal; }
-        @media screen and (max-width: 767px) {
-          .archive .products .product > div .product-details .textNormal {
-            width: 100% !important; } }
-      .archive .products .product > div .product-details .textNormalSmall {
+      .single-product .product > div div.summary .textNormalSmall {
         margin-top: 16px;
-        display: block; }
-        @media screen and (max-width: 767px) {
-          .archive .products .product > div .product-details .textNormalSmall {
-            width: 100% !important; } }
-      .archive .products .product > div .product-details .out-of-stock {
+        display: inline-block; }
+        .single-product .product > div div.summary .textNormalSmall p {
+          margin-top: 0; }
+      .single-product .product > div div.summary .out-of-stock {
         color: red;
         margin-top: 10px; }
-      .archive .products .product > div .product-details .product-price {
-        margin-top: -10px; }
-      .archive .products .product > div .product-details .button {
+      .single-product .product > div div.summary .product-price {
+        margin-top: -10px;
+        vertical-align: top; }
+      .single-product .product > div div.summary .button {
         background-color: black;
         color: white;
         font-family: Arial;
@@ -111,148 +232,81 @@ hr {
         border-radius: 0;
         padding: 5px;
         margin-top: 10px;
-        display: inline-block; }
-        .archive .products .product > div .product-details .button.loading:after {
+        display: inline-block;
+        -webkit-font-smoothing: auto; }
+      .single-product .product > div div.summary .cart {
+        margin-bottom: 0; }
+        .single-product .product > div div.summary .cart .quantity {
           display: none; }
-      .archive .products .product > div .product-details .added_to_cart {
-        display: table-cell;
-        font-family: 'News Gothic';
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding-top: 8px; }
-    .archive .products .product hr {
-      width: 480px;
-      margin: 25px 0 25px 214px; }
-      @media screen and (max-width: 767px) {
-        .archive .products .product hr {
-          width: 100%;
-          margin: 25px 0 25px 0;
-          max-width: 480px; } }
-
-@media screen and (max-width: 767px) {
-  .single-product {
-    padding: 0 25px !important; } }
-.single-product .product {
-  margin-top: 40px !important;
-  margin-left: 270px !important;
-  width: auto !important;
-  margin-bottom: 0 !important;
-  display: table;
-  float: none !important; }
-  @media screen and (max-width: 999px) {
-    .single-product .product {
-      margin-left: 0 !important;
-      margin-top: 220px !important; } }
-  @media screen and (max-width: 767px) {
-    .single-product .product {
-      width: 100% !important;
-      display: block; } }
-  .single-product .product .images {
-    display: table-cell;
-    width: auto !important;
-    float: none !important;
-    vertical-align: top; }
-    .single-product .product .images a {
-      width: 204px;
-      display: inline-block;
-      max-height: 193px;
-      text-align: right; }
-      @media screen and (max-width: 767px) {
-        .single-product .product .images a {
-          width: auto; } }
-      .single-product .product .images a img {
-        display: inline-block !important;
-        max-width: 100%;
-        max-height: 100%;
-        width: auto !important;
-        height: auto;
-        margin-bottom: 0;
-        vertical-align: top; }
-  .single-product .product .summary {
-    float: none !important;
-    display: table-cell;
-    width: auto !important;
-    padding-left: 10px;
-    vertical-align: middle;
-    width: 480px; }
-    @media screen and (max-width: 767px) {
-      .single-product .product .summary {
-        display: block;
-        padding-left: 0;
-        margin-top: 15px;
-        width: 100% !important; } }
-    .single-product .product .summary .textBookTitle {
-      color: black;
-      display: block; }
-    .single-product .product .summary .textNormal {
-      color: black;
-      display: block;
-      line-height: normal; }
-    .single-product .product .summary .textNormalSmall {
-      margin-top: 16px;
-      display: block; }
-    .single-product .product .summary .out-of-stock {
-      color: red;
-      margin-top: 10px; }
-    .single-product .product .summary .product-price {
-      margin-top: -10px; }
-    .single-product .product .summary .button {
-      background-color: black;
-      color: white;
-      font-family: Arial;
-      text-transform: uppercase;
-      font-family: 'News Gothic';
-      letter-spacing: 1px;
-      font-size: 11px;
-      border-radius: 0;
-      padding: 5px;
-      margin-top: 10px;
-      display: inline-block;
-      -webkit-font-smoothing: auto; }
-    .single-product .product .summary .cart {
-      margin-bottom: 0; }
-      .single-product .product .summary .cart .quantity {
-        display: none; }
+    .single-product .product > div .books-nav {
+      position: absolute;
+      bottom: -34px;
+      left: 130px; }
+      @media screen and (max-width: 719px) {
+        .single-product .product > div .books-nav {
+          position: relative;
+          bottom: 0;
+          left: 0; } }
+      .single-product .product > div .books-nav .book-prev {
+        margin-right: 10px; }
+      .single-product .product > div .books-nav .book-next {
+        margin-left: 10px; }
   .single-product .product hr {
-    width: 480px;
-    margin: 8px 0 8px 214px; }
-    @media screen and (max-width: 767px) {
+    margin: 8px 0 8px 0; }
+    @media screen and (max-width: 719px) {
       .single-product .product hr {
         width: 100% !important;
-        margin: 25px 0 25px 0;
-        max-width: 480px; } }
+        margin: 25px 0 25px 0; } }
   .single-product .product hr.above-desc {
-    width: 480px;
+    max-width: 100%;
     margin: 25px 0 13px 214px; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 719px) {
       .single-product .product hr.above-desc {
         width: 100% !important;
-        margin: 25px 0 25px 0;
-        max-width: 480px; } }
-  .single-product .product .book-description {
-    width: 480px;
-    margin: 0 0 25px 214px; }
-    @media screen and (max-width: 767px) {
-      .single-product .product .book-description {
-        width: 100% !important;
-        max-width: 480px;
-        margin-left: 0 !important; } }
-  .single-product .product .about-author {
-    width: 480px;
-    margin: 0 0 25px 214px; }
-    @media screen and (max-width: 767px) {
-      .single-product .product .about-author {
-        width: 100% !important;
-        max-width: 480px;
-        margin-left: 0 !important; } }
-  .single-product .product .image-gallery {
-    width: 480px;
-    margin: 0 0 25px 214px; }
-    @media screen and (max-width: 767px) {
-      .single-product .product .image-gallery {
-        width: 100% !important;
-        max-width: 480px;
-        margin-left: 0 !important; } }
+        margin: 25px 0 25px 0; } }
+  .single-product .product .book-content {
+    padding-left: 214px;
+    max-width: 480px; }
+    @media screen and (max-width: 899px) {
+      .single-product .product .book-content {
+        max-width: none !important; } }
+    @media screen and (max-width: 719px) {
+      .single-product .product .book-content {
+        padding-left: 0; } }
+    .single-product .product .book-content .book-description {
+      width: 100%;
+      margin: 0;
+      font-size: 13px; }
+      @media screen and (max-width: 719px) {
+        .single-product .product .book-content .book-description {
+          width: 100% !important;
+          margin-left: 0 !important; } }
+      .single-product .product .book-content .book-description p {
+        margin-top: 0; }
+      .single-product .product .book-content .book-description p:last-child {
+        margin-bottom: 5px !important; }
+    .single-product .product .book-content .about-author {
+      width: 100%;
+      margin: 0 0 25px 0;
+      margin-bottom: 0;
+      font-size: 10px; }
+      @media screen and (max-width: 719px) {
+        .single-product .product .book-content .about-author {
+          width: 100% !important;
+          margin-left: 0 !important; } }
+      .single-product .product .book-content .about-author p {
+        margin-top: 0; }
+      .single-product .product .book-content .about-author p:last-child {
+        margin-bottom: 5px !important; }
+    .single-product .product .book-content .image-gallery {
+      width: 100%;
+      margin: 0 0 25px 0; }
+      @media screen and (max-width: 719px) {
+        .single-product .product .book-content .image-gallery {
+          width: 100% !important;
+          margin-left: 0 !important; } }
+      @media screen and (max-width: 899px) {
+        .single-product .product .book-content .image-gallery img {
+          width: 100%; } }
 
 /*# sourceMappingURL=app.css.map */

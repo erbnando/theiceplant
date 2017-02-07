@@ -2,11 +2,11 @@
 	.products {
 		margin-top: 40px!important;
 		margin-left: 270px!important;
-		@media screen and (max-width: 999px) {
+		@media screen and (max-width: 899px) {
 			margin-left: 0!important;
 			margin-top: 220px!important;
 		}
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 599px) {
 			padding: 0 25px!important;
 		}
 		.product {
@@ -14,19 +14,24 @@
 			margin: 0!important;
 			display: table;
 			float: none!important;
-			@media screen and (max-width: 767px) {
+			font-size: 0;
+			padding-right: 25px!important;
+			@media screen and (max-width: 599px) {
 				width: 100%!important;
 			}
 			> div {
+				display: inline-block;
 				> a {
 					display: table-cell;
 					.product-img-wrap {
-						width: 204px;
+						width: 179px;
+						margin-left: 25px;
 						display: inline-block;
 						max-height: 193px;
 						text-align: right;
-						@media screen and (max-width: 767px) {
+						@media screen and (max-width: 599px) {
 							width: auto;
+							margin-left: 0;
 						}
 						img {
 							display: inline-block;
@@ -44,7 +49,9 @@
 					display: table-cell;
 					vertical-align: middle;
 					width: 480px;
-					@media screen and (max-width: 767px) {
+					font-size: 0;
+					max-width: 100%;
+					@media screen and (max-width: 599px) {
 						display: block;
 						padding-left: 0;
 						margin-top: 15px;
@@ -52,32 +59,38 @@
 					}
 					.textBookTitle {
 						color: black;
-						display: block;
-						@media screen and (max-width: 767px) {
+						@media screen and (max-width: 599px) {
 							width: 100%!important;
+						}
+						.subtitle {
+							font-size: 10px;
+							letter-spacing: normal;
 						}
 					}
 					.textNormal {
 						color: black;
-						display: block;
 						line-height: normal;
-						@media screen and (max-width: 767px) {
+						@media screen and (max-width: 599px) {
 							width: 100%!important;
 						}
 					}
 					.textNormalSmall {
+						display: inline-block;
 						margin-top: 16px;
-						display: block;
-						@media screen and (max-width: 767px) {
+						p {
+							margin-top: 0!important;
+						}
+						@media screen and (max-width: 599px) {
 							width: 100%!important;
 						}
 					}
 					.out-of-stock {
 						color: red;
-						margin-top: 10px;
+						margin-top: 0;
 					}
 					.product-price {
 						margin-top: -10px;
+						vertical-align: top;
 					}
 					.button {
 						background-color: black;
@@ -86,11 +99,11 @@
 						text-transform: uppercase;
 						font-family: 'News Gothic';
 						letter-spacing: 1px;
-		    			font-size: 11px;
-		    			border-radius: 0;
-		    			padding: 5px;
-		    			margin-top: 10px;
-		    			display: inline-block;
+						font-size: 11px;
+						border-radius: 0;
+						padding: 5px;
+						margin-top: 10px;
+						display: inline-block;
 						&.loading:after {
 							display: none;
 						}
@@ -98,27 +111,25 @@
 					.added_to_cart {
 						display: table-cell;
 						font-family: 'News Gothic';
-			    		font-size: 11px;
-			    		text-transform: uppercase;
+						font-size: 11px;
+						text-transform: uppercase;
 						letter-spacing: 1px;
 						padding-top: 8px;
 					}
 				}
 			}
 			hr {
-				width: 480px;
 				margin: 25px 0 25px 214px;
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 599px) {
 					width: 100%;
 					margin: 25px 0 25px 0;
-					max-width: 480px;
 				}
 			}
 		}
 	}
 }
 .single-product {
-	@media screen and (max-width: 767px) {
+	@media screen and (max-width: 719px) {
 		padding: 0 25px!important;
 	}
 	.product {
@@ -128,135 +139,192 @@
 		margin-bottom: 0!important;
 		display: table;
 		float: none!important;
-		@media screen and (max-width: 999px) {
+		padding-right: 30px;
+		@media screen and (max-width: 899px) {
 			margin-left: 0!important;
 			margin-top: 220px!important;
 		}
-		@media screen and (max-width: 767px) {
+		@media screen and (max-width: 719px) {
 			width: 100%!important;
 			display: block;
 		}
-		.images {
-			display: table-cell;
-			width: auto!important;
-			float: none!important;
+		> div {
+			position: relative;
+			display: inline-block;
 			vertical-align: top;
-			a {
-				width: 204px;
-				display: inline-block;
-				max-height: 193px;
-				text-align: right;
-				@media screen and (max-width: 767px) {
-					width: auto;
+			.images {
+				display: table-cell;
+				width: auto!important;
+				float: none!important;
+				vertical-align: top;
+				a {
+					width: 204px;
+					display: inline-block;
+					max-height: 193px;
+					text-align: right;
+					@media screen and (max-width: 719px) {
+						width: auto;
+					}
+					img {
+						display: inline-block!important;
+						max-width: 100%;
+						max-height: 100%;
+						width: auto!important;
+						height: auto;
+						margin-bottom: 0;
+						vertical-align: top;
+					}
 				}
-				img {
-					display: inline-block!important;
-					max-width: 100%;
-					max-height: 100%;
-					width: auto!important;
-					height: auto;
-					margin-bottom: 0;
+			}
+			div.summary {
+				float: none!important;
+				display: table-cell;
+				padding-left: 10px;
+				vertical-align: middle;
+				margin-bottom: 10px!important;
+				width: 480px;
+				font-size: 0;
+				max-width: 100%;
+				@media screen and (max-width: 719px) {
+					display: block;
+					padding-left: 0;
+					margin-top: 15px;
+					width: 100%!important;
+				}
+				.textBookTitle {
+					color: black;
+					@media screen and (max-width: 599px) {
+						width: 100%!important;
+					}
+					.subtitle {
+						font-size: 10px;
+						letter-spacing: normal;
+					}
+				}
+				.textNormal {
+					color: black;
+					line-height: normal;
+				}
+				.textNormalSmall {
+					margin-top: 16px;
+					display: inline-block;
+					p {
+						margin-top: 0;
+					}
+				}
+				.out-of-stock {
+					color: red;
+					margin-top: 10px;
+				}
+				.product-price {
+					margin-top: -10px;
 					vertical-align: top;
 				}
+				.button {
+					background-color: black;
+					color: white;
+					font-family: Arial;
+					text-transform: uppercase;
+					font-family: 'News Gothic';
+					letter-spacing: 1px;
+					font-size: 11px;
+					border-radius: 0;
+					padding: 5px;
+					margin-top: 10px;
+					display: inline-block;
+					-webkit-font-smoothing: auto;
+				}
+				.cart {
+					margin-bottom: 0;
+					.quantity {
+						display: none;
+					}
+				}
 			}
-		}
-		.summary {
-			float: none!important;
-			display: table-cell;
-			width: auto!important;
-			padding-left: 10px;
-			vertical-align: middle;
-			width: 480px;
-			@media screen and (max-width: 767px) {
-			    display: block;
-			    padding-left: 0;
-				margin-top: 15px;
-				width: 100%!important;
-			}
-			.textBookTitle {
-				color: black;
-				display: block;
-			}
-			.textNormal {
-				color: black;
-				display: block;
-				line-height: normal;
-			}
-			.textNormalSmall {
-				margin-top: 16px;
-				display: block;
-			}
-			.out-of-stock {
-				color: red;
-				margin-top: 10px;
-			}
-			.product-price {
-				margin-top: -10px;
-			}
-			.button {
-				background-color: black;
-				color: white;
-				font-family: Arial;
-				text-transform: uppercase;
-				font-family: 'News Gothic';
-				letter-spacing: 1px;
-    			font-size: 11px;
-    			border-radius: 0;
-    			padding: 5px;
-    			margin-top: 10px;
-    			display: inline-block;
-    			-webkit-font-smoothing: auto;
-			}
-			.cart {
-				margin-bottom: 0;
-				.quantity {
-					display: none;
+			.books-nav {
+				position: absolute;
+				bottom: -34px;
+				left: 130px;
+   				@media screen and (max-width: 719px) {
+					position: relative;
+					bottom: 0;
+					left: 0;
+				}
+				.book-prev {
+					margin-right: 10px; 
+				}
+				.book-next {
+					margin-left: 10px; 
 				}
 			}
 		}
 		hr {
-			width: 480px;
-			margin: 8px 0 8px 214px;
-			@media screen and (max-width: 767px) {
+			margin: 8px 0 8px 0;
+			@media screen and (max-width: 719px) {
 				width: 100%!important;
 				margin: 25px 0 25px 0;
-				max-width: 480px;
 			}
 		}
 		hr.above-desc {
-			width: 480px;
+			max-width: 100%;
 			margin: 25px 0 13px 214px;
-			@media screen and (max-width: 767px) {
+			@media screen and (max-width: 719px) {
 				width: 100%!important;
 				margin: 25px 0 25px 0;
-				max-width: 480px;
 			}
 		}
-		.book-description {
-			width: 480px;
-			margin: 0 0 25px 214px;
-			@media screen and (max-width: 767px) {
-				width: 100%!important;
-				max-width: 480px;
-				margin-left: 0!important;
+		.book-content {
+			padding-left: 214px;
+			max-width: 480px;
+			@media screen and (max-width: 899px) {
+				max-width: none!important;
 			}
-		}
-		.about-author {
-			width: 480px;
-			margin: 0 0 25px 214px;
-			@media screen and (max-width: 767px) {
-				width: 100%!important;
-				max-width: 480px;
-				margin-left: 0!important;
+			@media screen and (max-width: 719px) {
+				padding-left: 0;
 			}
-		}
-		.image-gallery {
-			width: 480px;
-			margin: 0 0 25px 214px;
-			@media screen and (max-width: 767px) {
-				width: 100%!important;
-				max-width: 480px;
-				margin-left: 0!important;
+			.book-description {
+				width: 100%;
+				margin: 0;
+				font-size: 13px;
+				@media screen and (max-width: 719px) {
+					width: 100%!important;
+					margin-left: 0!important;
+				}
+				p {
+					margin-top: 0;
+				}
+				p:last-child {
+					margin-bottom: 5px!important;
+				}
+			}
+			.about-author {
+				width: 100%;
+				margin: 0 0 25px 0;
+				margin-bottom: 0;
+				font-size: 10px;
+				@media screen and (max-width: 719px) {
+					width: 100%!important;
+					margin-left: 0!important;
+				}
+				p {
+					margin-top: 0;
+				}
+				p:last-child {
+					margin-bottom: 5px!important;
+				}
+			}
+			.image-gallery {
+				width: 100%;
+				margin: 0 0 25px 0;
+				@media screen and (max-width: 719px) {
+					width: 100%!important;
+					margin-left: 0!important;
+				}
+				img {
+					@media screen and (max-width: 899px) {
+						width: 100%;
+					}					
+				}
 			}
 		}
 	}

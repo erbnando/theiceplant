@@ -19,8 +19,11 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	 */
 	function woocommerce_template_loop_product_title() {
 		echo '<span class="textBookTitle">' . get_the_title() . '</span>';
-		echo '<span class="textNormal">' . get_field('author') . '</span>';
-		echo '<span class="textNormalSmall">' . get_field('details') . '</span>';
+		if(get_field('subtitle')) { 
+			echo '<span class="textBookTitle">: <span class="subtitle">' . get_field('subtitle') . '</span></span>'; 
+		}
+		echo '<br><span class="textNormal">' . get_field('author') . '</span>';
+		echo '<br><span class="textNormalSmall">' . get_field('details') . '</span>';
 	}
 }
 

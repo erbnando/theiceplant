@@ -68,7 +68,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	    if ( $product->is_in_stock() ) {
 			woocommerce_template_loop_add_to_cart();
 	    } else {
-	    	echo '<span class="textNormalSmall out-of-stock">OUT OF PRINT</span>';
+	    	echo '<br><span class="textNormalSmall out-of-stock">OUT OF PRINT</span>';
 	    }
 		?>
 		</div>

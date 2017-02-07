@@ -65,6 +65,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 				do_action( 'woocommerce_single_product_summary' );
 			?>
 		</div><!-- .summary -->
+		
+		<div class="books-nav">
+			<?php
+				if (get_previous_post()) {
+					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post(false,'',true)) . '"><<</a>';
+				} else {
+					$args = array(
+						'numberposts' => 1,
+						'post_type' => 'product'
+					);
+					$asc_posts = get_posts($args);
+					$latest = $asc_posts[0]->ID;
+					echo '<a class="book-prev" href="' . get_permalink($latest) . '"><<</a>';
+				}
+			?>
+			<?php
+				if (get_next_post()) {
+					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post(false,'',false)) . '">>></a>';
+				} else {
+					$args = array(
+						'numberposts' => 1,
+						'post_type' => 'product',
+		                'order' => 'ASC'
+					);
+					$desc_posts = get_posts($args);
+					$first = $desc_posts[0]->ID;
+					echo '<a class="book-next" href="' . get_permalink($first) . '">>></a>';
+				}
+			?>
+		</div>
+
 	</div>
 
 	<?php
@@ -82,25 +113,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<hr class="above-desc">
 
-	<?php 
-	echo '<div class="book-description textNormal">';
-	echo the_content();
-	echo '</div>'; 
+	<div class="book-content">
 
-	if (get_field('about_author')) {
-		echo '<hr>';
-		echo '<div class="about-author textNormalSmall">';
-		echo get_field('about_author');
+		<?php 
+		echo '<div class="book-description textNormal">';
+		echo the_content();
 		echo '</div>';
-	}
 
-	if (get_field('image_gallery')) {
-		echo '<hr>';
-		echo '<div class="image-gallery">';
-		echo '<img src="' . get_field('image_gallery') . '" />';
-		echo '</div>';
-	}
-	?>
+		if (get_field('about_author')) {
+			echo '<hr>';
+			echo '<div class="about-author textNormalSmall">';
+			echo get_field('about_author');
+			echo '</div>';
+		}
+
+		if (get_field('image_gallery')) {
+			echo '<hr>';
+			echo '<div class="image-gallery">';
+			echo '<img src="' . get_field('image_gallery') . '" />';
+			echo '</div>';
+		}
+		?>
+
+	</div>
 
 </div><!-- #product-<?php the_ID(); ?> -->
 
