@@ -129,7 +129,7 @@
 	}
 }
 .single-product {
-	@media screen and (max-width: 719px) {
+	@media screen and (max-width: 599px) {
 		padding: 0 25px!important;
 	}
 	.product {
@@ -144,7 +144,7 @@
 			margin-left: 0!important;
 			margin-top: 220px!important;
 		}
-		@media screen and (max-width: 719px) {
+		@media screen and (max-width: 599px) {
 			width: 100%!important;
 			display: block;
 		}
@@ -162,7 +162,7 @@
 					display: inline-block;
 					max-height: 193px;
 					text-align: right;
-					@media screen and (max-width: 719px) {
+					@media screen and (max-width: 599px) {
 						width: auto;
 					}
 					img {
@@ -185,7 +185,7 @@
 				width: 480px;
 				font-size: 0;
 				max-width: 100%;
-				@media screen and (max-width: 719px) {
+				@media screen and (max-width: 599px) {
 					display: block;
 					padding-left: 0;
 					margin-top: 15px;
@@ -245,7 +245,7 @@
 				position: absolute;
 				bottom: -34px;
 				left: 130px;
-   				@media screen and (max-width: 719px) {
+   				@media screen and (max-width: 599px) {
 					position: relative;
 					bottom: 0;
 					left: 0;
@@ -260,7 +260,7 @@
 		}
 		hr {
 			margin: 8px 0 8px 0;
-			@media screen and (max-width: 719px) {
+			@media screen and (max-width: 599px) {
 				width: 100%!important;
 				margin: 25px 0 25px 0;
 			}
@@ -268,7 +268,7 @@
 		hr.above-desc {
 			max-width: 100%;
 			margin: 25px 0 13px 214px;
-			@media screen and (max-width: 719px) {
+			@media screen and (max-width: 599px) {
 				width: 100%!important;
 				margin: 25px 0 25px 0;
 			}
@@ -279,14 +279,14 @@
 			@media screen and (max-width: 899px) {
 				max-width: none!important;
 			}
-			@media screen and (max-width: 719px) {
+			@media screen and (max-width: 599px) {
 				padding-left: 0;
 			}
 			.book-description {
 				width: 100%;
 				margin: 0;
 				font-size: 13px;
-				@media screen and (max-width: 719px) {
+				@media screen and (max-width: 599px) {
 					width: 100%!important;
 					margin-left: 0!important;
 				}
@@ -302,7 +302,7 @@
 				margin: 0 0 25px 0;
 				margin-bottom: 0;
 				font-size: 10px;
-				@media screen and (max-width: 719px) {
+				@media screen and (max-width: 599px) {
 					width: 100%!important;
 					margin-left: 0!important;
 				}
@@ -316,7 +316,7 @@
 			.image-gallery {
 				width: 100%;
 				margin: 0 0 25px 0;
-				@media screen and (max-width: 719px) {
+				@media screen and (max-width: 599px) {
 					width: 100%!important;
 					margin-left: 0!important;
 				}

@@ -140,7 +140,7 @@ hr {
           width: 100%;
           margin: 25px 0 25px 0; } }
 
-@media screen and (max-width: 719px) {
+@media screen and (max-width: 599px) {
   .single-product {
     padding: 0 25px !important; } }
 .single-product .product {
@@ -155,7 +155,7 @@ hr {
     .single-product .product {
       margin-left: 0 !important;
       margin-top: 220px !important; } }
-  @media screen and (max-width: 719px) {
+  @media screen and (max-width: 599px) {
     .single-product .product {
       width: 100% !important;
       display: block; } }
@@ -173,7 +173,7 @@ hr {
         display: inline-block;
         max-height: 193px;
         text-align: right; }
-        @media screen and (max-width: 719px) {
+        @media screen and (max-width: 599px) {
           .single-product .product > div .images a {
             width: auto; } }
         .single-product .product > div .images a img {
@@ -193,7 +193,7 @@ hr {
       width: 480px;
       font-size: 0;
       max-width: 100%; }
-      @media screen and (max-width: 719px) {
+      @media screen and (max-width: 599px) {
         .single-product .product > div div.summary {
           display: block;
           padding-left: 0;
@@ -242,7 +242,7 @@ hr {
       position: absolute;
       bottom: -34px;
       left: 130px; }
-      @media screen and (max-width: 719px) {
+      @media screen and (max-width: 599px) {
         .single-product .product > div .books-nav {
           position: relative;
           bottom: 0;
@@ -253,14 +253,14 @@ hr {
         margin-left: 10px; }
   .single-product .product hr {
     margin: 8px 0 8px 0; }
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 599px) {
       .single-product .product hr {
         width: 100% !important;
         margin: 25px 0 25px 0; } }
   .single-product .product hr.above-desc {
     max-width: 100%;
     margin: 25px 0 13px 214px; }
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 599px) {
       .single-product .product hr.above-desc {
         width: 100% !important;
         margin: 25px 0 25px 0; } }
@@ -270,14 +270,14 @@ hr {
     @media screen and (max-width: 899px) {
       .single-product .product .book-content {
         max-width: none !important; } }
-    @media screen and (max-width: 719px) {
+    @media screen and (max-width: 599px) {
       .single-product .product .book-content {
         padding-left: 0; } }
     .single-product .product .book-content .book-description {
       width: 100%;
       margin: 0;
       font-size: 13px; }
-      @media screen and (max-width: 719px) {
+      @media screen and (max-width: 599px) {
         .single-product .product .book-content .book-description {
           width: 100% !important;
           margin-left: 0 !important; } }
@@ -290,7 +290,7 @@ hr {
       margin: 0 0 25px 0;
       margin-bottom: 0;
       font-size: 10px; }
-      @media screen and (max-width: 719px) {
+      @media screen and (max-width: 599px) {
         .single-product .product .book-content .about-author {
           width: 100% !important;
           margin-left: 0 !important; } }
@@ -301,7 +301,7 @@ hr {
     .single-product .product .book-content .image-gallery {
       width: 100%;
       margin: 0 0 25px 0; }
-      @media screen and (max-width: 719px) {
+      @media screen and (max-width: 599px) {
         .single-product .product .book-content .image-gallery {
           width: 100% !important;
           margin-left: 0 !important; } }
