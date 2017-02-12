@@ -1,0 +1,21 @@
+header {
+	.title {
+		width: 26px!important;
+	}
+	#MainMenu {
+		.menu-main-menu-container {
+			ul {
+				position: absolute;
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+				li {
+					margin-bottom: 10px;
+					a {
+						text-transform: uppercase;
+					}
+				}
+			}
+		}
+	}
+}

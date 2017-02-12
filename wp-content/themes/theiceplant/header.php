@@ -29,18 +29,16 @@
 
 <body <?php body_class( 'class-name' ); ?>>
 
-<div id="TheIcePLant">
-<a href="/"> <img src="<?php echo get_template_directory_uri() ?>/assets/images/to_THEICEPLANT.gif" name="TheIcePlant" width="26" height="160" border="0" id="TheIcePlant" /></a>
-</div>
+<header>
+	<div id="TheIcePLant">
+	<a href="/"><img class="title" src="<?php echo get_template_directory_uri() ?>/assets/images/title.png" name="TheIcePlant" width="26" height="160" border="0" id="TheIcePlant" /></a>
+	</div>
 
-<div>
-<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>"> <img src="<?php echo get_template_directory_uri() ?>/assets/images/LOGO_anm.gif" alt="The Ice Plant LOGO" name="TheIcePlant_LOGO" width="80" height="80" border="0" id="TheIcePlant_LOGO"/></a>
-</div>
+	<div>
+		<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>"> <img src="<?php echo get_template_directory_uri() ?>/assets/images/LOGO_anm.gif" alt="The Ice Plant LOGO" name="TheIcePlant_LOGO" width="80" height="80" border="0" id="TheIcePlant_LOGO"/></a>
+	</div>
 
-<div id="MainMenu">
-	<a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ); ?>" target="_self">BOOKS</a><br /><br />
-	<a href="5year.html" target="_self">5 YEAR DIARY</a><br /><br />
-	<a href="emmettGTO.html" target="_self">T-SHIRT</a><br /><br />
-	<a href="stores.html" target="_self">STORES</a><br /><br />
-	<a href="info.html" target="_self">INFO</a>
-</div>
+	<div id="MainMenu">
+		<?php wp_nav_menu(); ?>
+	</div>
+</header>

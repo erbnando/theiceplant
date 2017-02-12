@@ -1,8 +1,8 @@
 <?php
 
 function wpdocs_theme_name_scripts() {
-    wp_enqueue_style( 'app-styles', get_template_directory_uri() . '/assets/scss/app.css');
-    wp_enqueue_style( 'legacy-styles', get_template_directory_uri() . '/assets/scss/legacy.css');
+    wp_enqueue_style( 'app-styles', get_template_directory_uri() . '/assets/css/app.css');
+    wp_enqueue_style( 'legacy-styles', get_template_directory_uri() . '/assets/css/legacy.css');
 
     wp_enqueue_script( 'app-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true );
 }
@@ -43,5 +43,31 @@ function woo_remove_product_tabs($tabs) {
 }
 
 add_filter( 'woocommerce_product_tabs', 'woo_remove_product_tabs', 98 );
+
+add_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+function custom_pre_get_posts_query( $q ) {
+	if ( ! $q->is_main_query() ) return;
+	if ( ! $q->is_post_type_archive() ) return;
+	if ( ! is_admin() && is_shop() ) {
+		$q->set( 'tax_query', array(array(
+			'taxonomy' => 'product_cat',
+			'field' => 'slug',
+			'terms' => array( 'books' ), // Don't display products in the knives category on the shop page
+			'operator' => 'IN'
+		)));
+	}
+	remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
+}
+
+function my_theme_add_editor_styles() {
+    add_editor_style( 'assets/css/editor-style.css' );
+}
+add_action( 'init', 'my_theme_add_editor_styles' );
+
+// Menu
+register_nav_menus( array(
+	'main_menu' => 'Main Menu'
+) );
+
 
 ?>

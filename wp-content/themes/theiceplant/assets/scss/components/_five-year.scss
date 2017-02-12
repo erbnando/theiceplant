@@ -1,0 +1,70 @@
+.page-template-page-five-year {
+    .main {
+        position: relative;
+        margin-left: 484px;
+        max-width: 480px;
+        margin-top: 36px;
+        @media screen and (max-width: 999px) {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-left: 0;
+            margin-top: 220px;
+            width: 530px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        .title {
+            letter-spacing: 0.1em;
+            font-weight: bold;          
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        div {
+            display: block;
+            font-size: 0;
+            a {
+                .diary {
+                    margin-right: 8px;
+                    @media screen and (max-width: 999px) {
+                        width: 23%;
+                        margin-right: 2%;
+                    }
+                }
+            }
+        }
+        .look-inside {
+            position: absolute;
+            left: -124px;
+            top: 41px;
+            @media screen and (max-width: 999px) {
+                position: relative;
+                left: 0;
+                top: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.page-template-page-five-year-deets {
+    .main {
+        position: relative;
+        margin-left: 350px;
+        max-width: 614px;
+        margin-top: 36px;
+        @media screen and (max-width: 999px) {
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-left: 0;
+            margin-top: 220px;
+            width: 614px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        img {
+            max-width: 100%;
+            position: relative;
+            margin-bottom: 25px;
+        }
+    }    
+}
