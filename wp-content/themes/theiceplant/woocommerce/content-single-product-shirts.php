@@ -38,103 +38,62 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div>
-		<?php
-			/**
-			 * woocommerce_before_single_product_summary hook.
-			 *
-			 * @hooked woocommerce_show_product_sale_flash - 10
-			 * @hooked woocommerce_show_product_images - 20
-			 */
-			do_action( 'woocommerce_before_single_product_summary' );
-		?>
-
-		<div class="summary entry-summary">
-
+		<div>
 			<?php
 				/**
-				 * woocommerce_single_product_summary hook.
+				 * woocommerce_before_single_product_summary hook.
 				 *
-				 * @hooked woocommerce_template_single_title - 5
-				 * @hooked woocommerce_template_single_rating - 10
-				 * @hooked woocommerce_template_single_price - 10
-				 * @hooked woocommerce_template_single_excerpt - 20
-				 * @hooked woocommerce_template_single_add_to_cart - 30
-				 * @hooked woocommerce_template_single_meta - 40
-				 * @hooked woocommerce_template_single_sharing - 50
+				 * @hooked woocommerce_show_product_sale_flash - 10
+				 * @hooked woocommerce_show_product_images - 20
 				 */
-				do_action( 'woocommerce_single_product_summary' );
+				// do_action( 'woocommerce_before_single_product_summary' );
 			?>
-		</div><!-- .summary -->
-		
-		<div class="books-nav">
-			<?php
-				if (get_previous_post()) {
-					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post(false,'',true)) . '"><<</a>';
-				} else {
-					$args = array(
-						'numberposts' => 1,
-						'post_type' => 'product'
-					);
-					$asc_posts = get_posts($args);
-					$latest = $asc_posts[0]->ID;
-					echo '<a class="book-prev" href="' . get_permalink($latest) . '"><<</a>';
-				}
-			?>
-			<?php
-				if (get_next_post()) {
-					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post(false,'',false)) . '">>></a>';
-				} else {
-					$args = array(
-						'numberposts' => 1,
-						'post_type' => 'product',
-		                'order' => 'ASC'
-					);
-					$desc_posts = get_posts($args);
-					$first = $desc_posts[0]->ID;
-					echo '<a class="book-next" href="' . get_permalink($first) . '">>></a>';
-				}
-			?>
+
+			<div class="summary entry-summary">
+
+				<?php
+					/**
+					 * woocommerce_single_product_summary hook.
+					 *
+					 * @hooked woocommerce_template_single_title - 5
+					 * @hooked woocommerce_template_single_rating - 10
+					 * @hooked woocommerce_template_single_price - 10
+					 * @hooked woocommerce_template_single_excerpt - 20
+					 * @hooked woocommerce_template_single_add_to_cart - 30
+					 * @hooked woocommerce_template_single_meta - 40
+					 * @hooked woocommerce_template_single_sharing - 50
+					 */
+					do_action( 'woocommerce_single_product_summary' );
+				?>
+			</div><!-- .summary -->
 		</div>
 
-	</div>
-
-	<?php
-		/**
-		 * woocommerce_after_single_product_summary hook.
-		 *
-		 * @hooked woocommerce_output_product_data_tabs - 10
-		 * @hooked woocommerce_upsell_display - 15
-		 * @hooked woocommerce_output_related_products - 20
-		 */
-		// do_action( 'woocommerce_after_single_product_summary' );
-	?>
-
-	<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
-	<hr class="above-desc">
-
-	<div class="book-content">
-
-		<?php 
-		echo '<div class="book-description textNormal">';
-		echo the_content();
-		echo '</div>';
-
-		if (get_field('about_author')) {
-			echo '<hr>';
-			echo '<div class="about-author textNormalSmall">';
-			echo get_field('about_author');
-			echo '</div>';
-		}
-
-		if (get_field('image_gallery')) {
-			echo '<hr>';
-			echo '<div class="image-gallery">';
-			echo '<img src="' . get_field('image_gallery') . '" />';
-			echo '</div>';
-		}
+		<?php
+			/**
+			 * woocommerce_after_single_product_summary hook.
+			 *
+			 * @hooked woocommerce_output_product_data_tabs - 10
+			 * @hooked woocommerce_upsell_display - 15
+			 * @hooked woocommerce_output_related_products - 20
+			 */
+			// do_action( 'woocommerce_after_single_product_summary' );
 		?>
 
+		<?php the_post_thumbnail(); ?>
+
+		<meta itemprop="url" content="<?php the_permalink(); ?>" />
+
+		<?php
+		
+		global $product;
+		$attachment_ids = $product->get_gallery_attachment_ids();
+		$image_link = wp_get_attachment_url($attachment_ids[0]);
+		
+		?>
+
+		<div class="gallery">
+			<img src="<?php echo $image_link; ?>" />	
+		</div>
 	</div>
 
 </div><!-- #product-<?php the_ID(); ?> -->

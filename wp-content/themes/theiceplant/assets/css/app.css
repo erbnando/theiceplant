@@ -218,9 +218,6 @@ hr {
           width: 100%;
           margin: 25px 0 25px 0; } }
 
-@media screen and (max-width: 599px) {
-  .single-product {
-    padding: 0 25px !important; } }
 .single-product .product {
   margin-top: 40px !important;
   margin-left: 270px !important;
@@ -236,7 +233,9 @@ hr {
   @media screen and (max-width: 599px) {
     .single-product .product {
       width: 100% !important;
-      display: block; } }
+      display: block;
+      padding: 0 25px !important;
+      box-sizing: border-box; } }
   .single-product .product > div {
     position: relative;
     display: inline-block;
@@ -386,18 +385,109 @@ hr {
       @media screen and (max-width: 899px) {
         .single-product .product .book-content .image-gallery img {
           width: 100%; } }
+.single-product .product_cat-shirts {
+  max-width: 850px;
+  font-size: 0;
+  width: 100% !important;
+  padding-left: 270px;
+  margin-left: 0 !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: none; }
+  @media screen and (max-width: 899px) {
+    .single-product .product_cat-shirts {
+      padding-left: 30px; } }
+  .single-product .product_cat-shirts > div {
+    max-width: 850px;
+    width: 100%; }
+    .single-product .product_cat-shirts > div > div {
+      vertical-align: bottom;
+      width: 25%;
+      display: inline-block; }
+      @media screen and (max-width: 899px) {
+        .single-product .product_cat-shirts > div > div {
+          width: 30%; } }
+      @media screen and (max-width: 599px) {
+        .single-product .product_cat-shirts > div > div {
+          width: 50%; } }
+      @media screen and (max-width: 479px) {
+        .single-product .product_cat-shirts > div > div {
+          width: 100%;
+          margin-bottom: 40px; } }
+      .single-product .product_cat-shirts > div > div .summary.entry-summary {
+        width: 100%;
+        display: block !important;
+        padding-right: 10px;
+        padding-left: 0 !important;
+        vertical-align: bottom !important;
+        box-sizing: border-box;
+        margin-bottom: 0 !important; }
+        .single-product .product_cat-shirts > div > div .summary.entry-summary .textNormalSmall {
+          margin-top: 0 !important; }
+        .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form {
+          font-size: 10px; }
+          .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table {
+            width: 100% !important; }
+            .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table td {
+              display: block;
+              padding: 0; }
+              .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table td select {
+                min-width: 0px;
+                max-width: 150px;
+                margin-bottom: 0 !important;
+                width: 100%; }
+            .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table .label {
+              font-family: Arial, Helvetica, sans-serif;
+              font-size: x-small;
+              resize: none; }
+              .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table .label label {
+                font-weight: normal; }
+            .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form table .reset_variations {
+              display: none !important; }
+          .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form .single_variation_wrap .quantity {
+            float: none; }
+          .single-product .product_cat-shirts > div > div .summary.entry-summary .variations_form .single_variation_wrap .woocommerce-variation-add-to-cart {
+            margin-top: 3px; }
+    .single-product .product_cat-shirts > div > img {
+      vertical-align: bottom;
+      height: auto;
+      width: 40%;
+      height: auto; }
+      @media screen and (max-width: 899px) {
+        .single-product .product_cat-shirts > div > img {
+          width: 35%; } }
+      @media screen and (max-width: 599px) {
+        .single-product .product_cat-shirts > div > img {
+          width: 50%; } }
+      @media screen and (max-width: 479px) {
+        .single-product .product_cat-shirts > div > img {
+          width: 100%; } }
+    .single-product .product_cat-shirts > div .gallery {
+      max-width: none !important;
+      width: 35%; }
+      @media screen and (max-width: 599px) {
+        .single-product .product_cat-shirts > div .gallery {
+          display: none; } }
+      .single-product .product_cat-shirts > div .gallery img {
+        padding-left: 10px;
+        vertical-align: bottom;
+        box-sizing: border-box;
+        width: 100%;
+        height: auto; }
 
 header .title {
   width: 26px !important; }
-header #MainMenu .menu-main-menu-container ul {
-  position: absolute;
-  padding: 0;
-  margin: 0;
-  list-style-type: none; }
-  header #MainMenu .menu-main-menu-container ul li {
-    margin-bottom: 10px; }
-    header #MainMenu .menu-main-menu-container ul li a {
-      text-transform: uppercase; }
+header #MainMenu {
+  z-index: 1; }
+  header #MainMenu .menu-main-menu-container ul {
+    position: absolute;
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+    header #MainMenu .menu-main-menu-container ul li {
+      margin-bottom: 10px; }
+      header #MainMenu .menu-main-menu-container ul li a {
+        text-transform: uppercase; }
 
 .page-template-page-five-year .main {
   position: relative;

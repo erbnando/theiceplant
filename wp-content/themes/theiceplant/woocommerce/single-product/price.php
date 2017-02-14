@@ -23,6 +23,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<?php if ( $price_html = $product->get_price_html() ) : ?>
-	<br><span class="product-price textNormalSmall"><?php echo $price_html; ?></span>
-<?php endif; ?>
+<?php 
+if ( !has_term( 'shirts', 'product_cat' ) ) {
+	if ( $price_html = $product->get_price_html() ) : ?>
+		<br><span class="product-price textNormalSmall"><?php echo $price_html; ?></span>
+	<?php endif;
+}
+?>

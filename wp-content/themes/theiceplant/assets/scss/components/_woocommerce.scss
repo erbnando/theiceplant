@@ -129,9 +129,6 @@
 	}
 }
 .single-product {
-	@media screen and (max-width: 599px) {
-		padding: 0 25px!important;
-	}
 	.product {
 		margin-top: 40px!important;
 		margin-left: 270px!important;
@@ -147,6 +144,8 @@
 		@media screen and (max-width: 599px) {
 			width: 100%!important;
 			display: block;
+			padding: 0 25px!important;
+			box-sizing: border-box;
 		}
 		> div {
 			position: relative;
@@ -323,7 +322,115 @@
 				img {
 					@media screen and (max-width: 899px) {
 						width: 100%;
-					}					
+					}
+				}
+			}
+		}
+	}
+	.product_cat-shirts {
+		max-width: 850px;
+		font-size: 0;
+		width: 100%!important;
+		padding-left: 270px;
+		margin-left: 0!important;
+		box-sizing: border-box;
+    	width: 100%!important;
+    	max-width: none;
+		@media screen and (max-width: 899px) {
+			padding-left: 30px;
+		}
+		> div {
+			max-width: 850px;
+			width: 100%;
+			> div {
+				vertical-align: bottom;
+				width: 25%;
+				display: inline-block;
+				@media screen and (max-width: 899px) {
+					width: 30%;
+				}
+				@media screen and (max-width: 599px) {
+					width: 50%;
+				}
+				@media screen and (max-width: 479px) {
+					width: 100%;
+					margin-bottom: 40px;
+				}
+				.summary.entry-summary {
+					width: 100%;
+					display: block!important;
+					padding-right: 10px;
+					padding-left: 0!important;
+					vertical-align: bottom!important;
+					box-sizing: border-box;
+					margin-bottom: 0!important;
+					.textNormalSmall {
+						margin-top: 0!important;
+					}
+					.variations_form {
+						font-size: 10px;
+						table {
+							width: 100%!important;
+							td {
+								display: block;
+								padding: 0;
+								select {
+									min-width: 0px;
+									max-width: 150px;
+									margin-bottom: 0!important;
+									width: 100%;								
+								}
+							}
+							.label {
+								font-family: Arial, Helvetica, sans-serif;
+								font-size: x-small;
+								resize: none;
+								label {
+									font-weight: normal;
+								}
+							}
+							.reset_variations {
+								display: none!important;
+							}
+						}
+						.single_variation_wrap {
+							.quantity {
+								float: none;
+							}
+							.woocommerce-variation-add-to-cart {
+								margin-top: 3px;
+							}
+						}
+					}
+				}
+			}
+			> img {
+				vertical-align: bottom;
+				height: auto;
+				width: 40%;
+				height: auto;
+				@media screen and (max-width: 899px) {
+					width: 35%;
+				}
+				@media screen and (max-width: 599px) {
+					width: 50%;
+				}
+				@media screen and (max-width: 479px) {
+					width: 100%;
+				}
+			}
+			.gallery {
+				max-width: none!important;
+				width: 35%;
+				@media screen and (max-width: 599px) {
+					display: none;
+				}
+				img {
+					padding-left: 10px;
+					vertical-align: bottom;
+					box-sizing: border-box;
+					width: 100%;
+					height: auto;
 				}
 			}
 		}
