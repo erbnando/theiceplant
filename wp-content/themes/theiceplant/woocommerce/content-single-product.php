@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			do_action( 'woocommerce_before_single_product_summary' );
 		?>
 
-		<div class="summary entry-summary">
+		<div class="summary entry-summary <?php if (get_field('right_floated_image')) { ?>padding-right<?php } ?>">
 
 			<?php
 				/**
@@ -64,16 +64,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 			?>
+			<?php if (get_field('right_floated_image')) { ?>
+				<a <?php if (get_field('right_floated_image_url_new_tab')) { ?>target="_blank"<?php } ?> href="<?php the_field('right_floated_image_url'); ?>"><img class="right-floated" src="<?php the_field('right_floated_image'); ?>" /></a>
+			<?php }
+			?>
 		</div><!-- .summary -->
 		
 		<div class="books-nav">
 			<?php
-				if (get_previous_post()) {
-					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post(false,'',true)) . '"><<</a>';
+				if (get_adjacent_post_product(true,'',true)) {
+					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',true)) . '"><<</a>';
 				} else {
 					$args = array(
 						'numberposts' => 1,
-						'post_type' => 'product'
+						'post_type' => 'product',
+                        'product_cat' => 'books',
+                        'order' => 'DESC'
 					);
 					$asc_posts = get_posts($args);
 					$latest = $asc_posts[0]->ID;
@@ -81,12 +87,13 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 			?>
 			<?php
-				if (get_next_post()) {
-					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post(false,'',false)) . '">>></a>';
+				if (get_adjacent_post_product(true,'',false)) {
+					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '">>></a>';
 				} else {
 					$args = array(
 						'numberposts' => 1,
 						'post_type' => 'product',
+                        'product_cat' => 'books',
 		                'order' => 'ASC'
 					);
 					$desc_posts = get_posts($args);
@@ -127,10 +134,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			echo '</div>';
 		}
 
-		if (get_field('image_gallery')) {
+		global $product;
+		$attachment_ids = $product->get_gallery_attachment_ids();
+
+		if (!empty($attachment_ids)) {
 			echo '<hr>';
 			echo '<div class="image-gallery">';
-			echo '<img src="' . get_field('image_gallery') . '" />';
+			foreach($attachment_ids as $item) {
+				$image_link = wp_get_attachment_url($item);
+				echo '<img src="' . $image_link . '" />';
+			}
 			echo '</div>';
 		}
 		?>

@@ -25,8 +25,10 @@ global $product;
 ?>
 <?php 
 if ( !has_term( 'shirts', 'product_cat' ) ) {
-	if ( $price_html = $product->get_price_html() ) : ?>
-		<br><span class="product-price textNormalSmall"><?php echo $price_html; ?></span>
-	<?php endif;
+	if ( $price_html = $product->get_price_html() ) : 
+		if ($product->is_in_stock()) : ?>
+			<br><span class="product-price textNormalSmall"><?php echo $price_html; ?></span>
+		<?php endif;
+	endif;
 }
 ?>

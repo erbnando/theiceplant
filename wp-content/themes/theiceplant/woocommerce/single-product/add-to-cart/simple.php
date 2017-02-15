@@ -62,4 +62,6 @@ if ( ! $product->is_purchasable() ) {
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
-<?php endif; ?>
+<?php else:
+	echo '<br><span class="textNormalSmall out-of-stock">OUT OF PRINT</span>'; 
+endif; ?>

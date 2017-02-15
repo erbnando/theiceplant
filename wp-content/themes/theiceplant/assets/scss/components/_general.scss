@@ -36,3 +36,87 @@ a:active {
 hr {
 	box-sizing: border-box;
 }
+
+.block {
+	display: block;
+}
+
+.page-template-default {
+	.main {
+		position: relative;
+		margin-left: 279px;
+		max-width: 480px;
+		margin-top: 42px;
+		width: 100%;
+		@media screen and (max-width: 799px) {
+			margin-left: 0;
+            margin-top: 220px;
+            max-width: none;
+            padding: 0 25px;
+            box-sizing: border-box;
+		}
+	}
+}
+
+.page-template-page-contact-us {
+	.main {
+		position: relative;
+		margin-left: 279px;
+		max-width: 480px;
+		margin-top: 42px;
+		width: 100%;
+		@media screen and (max-width: 799px) {
+			margin-left: 0;
+            margin-top: 220px;
+            max-width: none;
+            padding: 0 25px;
+            box-sizing: border-box;
+		}
+		.title {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: small;
+			letter-spacing: 0.1em;
+			font-weight: bold;
+			text-transform: uppercase;
+			margin-bottom: 20px;
+		}
+		> div {
+			display: none;
+		}
+		form {
+			table {
+				float: none;
+				tr {
+					&:first-child {
+						td {
+							div {
+								margin-bottom: 10px;
+							}
+						}	
+					}
+					&:last-child {
+						td {
+							span {
+								margin-top: 5px;
+								margin-bottom: 20px;
+							}
+						}	
+					}
+					td {
+						padding: 0;
+						div:last-child {
+							display: none;
+						}
+						span {
+							font-family: Arial, Helvetica, sans-serif!important;
+						}
+						> span {
+							margin-bottom: 2px;
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
