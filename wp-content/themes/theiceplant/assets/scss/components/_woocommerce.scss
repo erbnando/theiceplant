@@ -686,6 +686,9 @@
                     }
                     .form-row {
                         padding: 0;
+                        @media screen and (max-width: 479px) {
+                            width: 100%;
+                        }
                         input {
                             border-style: solid;
                             border-width: 1px;
@@ -734,6 +737,9 @@
                     }                    
                     .form-row {
                         padding: 0;
+                        @media screen and (max-width: 479px) {
+                            width: 100%;
+                        }
                         input {
                             border-style: solid;
                             border-width: 1px;

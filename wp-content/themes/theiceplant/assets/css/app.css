@@ -728,6 +728,9 @@ button.button.disabled:hover {
       margin-bottom: 20px; }
     .woocommerce-checkout .checkout .col2-set .col-1 .woocommerce-billing-fields .form-row {
       padding: 0; }
+      @media screen and (max-width: 479px) {
+        .woocommerce-checkout .checkout .col2-set .col-1 .woocommerce-billing-fields .form-row {
+          width: 100%; } }
       .woocommerce-checkout .checkout .col2-set .col-1 .woocommerce-billing-fields .form-row input {
         border-style: solid;
         border-width: 1px;
@@ -758,6 +761,9 @@ button.button.disabled:hover {
       margin-bottom: 10px; }
     .woocommerce-checkout .checkout .col2-set .col-2 .woocommerce-shipping-fields .form-row {
       padding: 0; }
+      @media screen and (max-width: 479px) {
+        .woocommerce-checkout .checkout .col2-set .col-2 .woocommerce-shipping-fields .form-row {
+          width: 100%; } }
       .woocommerce-checkout .checkout .col2-set .col-2 .woocommerce-shipping-fields .form-row input {
         border-style: solid;
         border-width: 1px;
