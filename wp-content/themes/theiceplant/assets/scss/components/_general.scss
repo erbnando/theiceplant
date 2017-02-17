@@ -41,6 +41,16 @@ hr {
 	display: block;
 }
 
+button, a {
+	&:focus {
+		outline: 0;
+	}
+}
+
+button.button.disabled:hover {
+	background-color: black!important;
+}
+
 .page-template-default {
 	.main {
 		position: relative;

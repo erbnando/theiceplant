@@ -69,40 +69,45 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php }
 			?>
 		</div><!-- .summary -->
-		
-		<div class="books-nav">
-			<?php
-				if (get_adjacent_post_product(true,'',true)) {
-					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',true)) . '"><<</a>';
-				} else {
-					$args = array(
-						'numberposts' => 1,
-						'post_type' => 'product',
-                        'product_cat' => 'books',
-                        'order' => 'DESC'
-					);
-					$asc_posts = get_posts($args);
-					$latest = $asc_posts[0]->ID;
-					echo '<a class="book-prev" href="' . get_permalink($latest) . '"><<</a>';
-				}
-			?>
-			<?php
-				if (get_adjacent_post_product(true,'',false)) {
-					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '">>></a>';
-				} else {
-					$args = array(
-						'numberposts' => 1,
-						'post_type' => 'product',
-                        'product_cat' => 'books',
-		                'order' => 'ASC'
-					);
-					$desc_posts = get_posts($args);
-					$first = $desc_posts[0]->ID;
-					echo '<a class="book-next" href="' . get_permalink($first) . '">>></a>';
-				}
-			?>
-		</div>
 
+        <?php global $product; ?>
+
+        <?php if ($product->is_visible()) { ?>
+
+    		<div class="books-nav">
+    			<?php
+    				if (get_adjacent_post_product(true,'',true)) {
+    					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',true)) . '"><<</a>';
+    				} else {
+    					$args = array(
+    						'numberposts' => 1,
+    						'post_type' => 'product',
+                            'product_cat' => 'books',
+                            'order' => 'DESC'
+    					);
+    					$asc_posts = get_posts($args);
+    					$latest = $asc_posts[0]->ID;
+    					echo '<a class="book-prev" href="' . get_permalink($latest) . '"><<</a>';
+    				}
+    			?>
+    			<?php
+    				if (get_adjacent_post_product(true,'',false)) {
+    					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '">>></a>';
+    				} else {
+    					$args = array(
+    						'numberposts' => 1,
+    						'post_type' => 'product',
+                            'product_cat' => 'books',
+    		                'order' => 'ASC'
+    					);
+    					$desc_posts = get_posts($args);
+    					$first = $desc_posts[0]->ID;
+    					echo '<a class="book-next" href="' . get_permalink($first) . '">>></a>';
+    				}
+    			?>
+    		</div>
+
+        <?php } ?>
 	</div>
 
 	<?php
@@ -134,7 +139,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			echo '</div>';
 		}
 
-		global $product;
 		$attachment_ids = $product->get_gallery_attachment_ids();
 
 		if (!empty($attachment_ids)) {

@@ -19,11 +19,18 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	 */
 	function woocommerce_template_loop_product_title() {
 		echo '<span class="textBookTitle">' . get_the_title() . '</span>';
-		if(get_field('subtitle')) { 
-			echo '<span class="textBookTitle">: <span class="subtitle">' . get_field('subtitle') . '</span></span>'; 
+		if(get_field('small_subtitle')) { 
+			echo '<span class="textBookTitle">: <span class="subtitle">' . get_field('small_subtitle') . '</span></span>';
 		}
-		echo '<br><span class="textNormal">' . get_field('author') . '</span>';
-		echo '<br><span class="textNormalSmall">' . get_field('details') . '</span>';
+		if(get_field('subtitle')) {
+			echo '<span class="textBookTitle">' . get_field('subtitle') . '</span>';
+		}
+		if(get_field('author')) {
+			echo '<br><span class="textNormal">' . get_field('author') . '</span>';
+		}
+		if(get_field('details')) {
+			echo '<br><span class="textNormalSmall">' . get_field('details') . '</span>';
+		}
 	}
 }
 
@@ -70,7 +77,7 @@ register_nav_menus( array(
 ) );
 
 remove_action( 'woocommerce_before_single_product', 'wc_print_notices' );
-add_action( 'woocommerce_single_product_summary', 'wc_print_notices' );
+add_action( 'woocommerce_single_product_summary', 'wc_print_notices', 60 );
 
 function next_post_link_product($format='%link &raquo;', $link='%title', $in_same_cat = false, $excluded_categories = '') {
     adjacent_post_link_product($format, $link, $in_same_cat, $excluded_categories, false);
@@ -186,6 +193,12 @@ function get_adjacent_post_product( $in_same_cat = false, $excluded_categories =
 
     return $result;
 }
-shareimprove
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+function custom_override_checkout_fields( $fields ) {
+    unset($fields['billing']['billing_company']);
+    unset($fields['shipping']['shipping_company']);
+    return $fields;
+}
 
 ?>
