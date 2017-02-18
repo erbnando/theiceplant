@@ -4,7 +4,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
+<title><?php bloginfo('name'); ?></title>
 
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <meta name="Description" content="The Ice Plant is a publishing house based in Los Angeles, producing artist books and other printed matter since 2006." />
