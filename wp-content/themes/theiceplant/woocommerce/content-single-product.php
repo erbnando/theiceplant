@@ -76,33 +76,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     		<div class="books-nav">
     			<?php
-    				if (get_adjacent_post_product(true,'',true)) {
-    					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',true)) . '"><<</a>';
+    				if (get_adjacent_post_product(true,'',false)) {
+    					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '"><<</a>';
     				} else {
     					$args = array(
     						'numberposts' => 1,
     						'post_type' => 'product',
                             'product_cat' => 'books',
-                            'order' => 'DESC'
+                            'orderby' => 'ASC',
+                            'order' => 'DESC',
     					);
-    					$asc_posts = get_posts($args);
-    					$latest = $asc_posts[0]->ID;
-    					echo '<a class="book-prev" href="' . get_permalink($latest) . '"><<</a>';
+    					$desc_posts = get_posts($args);
+                        $first = $desc_posts[0]->ID;
+    					echo '<a class="book-prev" href="' . get_permalink($first) . '"><<</a>';
     				}
     			?>
     			<?php
-    				if (get_adjacent_post_product(true,'',false)) {
-    					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '">>></a>';
+    				if (get_adjacent_post_product(true,'',true)) {
+    					echo '<a class="book-next" href="' . get_permalink(get_adjacent_post_product(true,'',true)) . '">>></a>';
     				} else {
     					$args = array(
     						'numberposts' => 1,
     						'post_type' => 'product',
                             'product_cat' => 'books',
-    		                'order' => 'ASC'
+                            'orderby' => 'ASC',
+                            'order' => 'ASC',
     					);
-    					$desc_posts = get_posts($args);
-    					$first = $desc_posts[0]->ID;
-    					echo '<a class="book-next" href="' . get_permalink($first) . '">>></a>';
+    					$asc_posts = get_posts($args);
+    					$latest = $asc_posts[0]->ID;
+    					echo '<a class="book-next" href="' . get_permalink($latest) . '">>></a>';
     				}
     			?>
     		</div>
