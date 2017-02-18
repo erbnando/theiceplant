@@ -248,7 +248,7 @@ button.button.disabled:hover {
               width: 100% !important; } }
         .archive .products .product > div .product-details .out-of-stock {
           color: red;
-          margin-top: 0; }
+          margin-top: 10px; }
         .archive .products .product > div .product-details .product-price {
           margin-top: 0;
           vertical-align: top; }
@@ -369,7 +369,7 @@ button.button.disabled:hover {
         display: none; }
       .single-product .product > div div.summary .out-of-stock {
         color: red;
-        margin-top: 0; }
+        margin-top: 10px; }
       .single-product .product > div div.summary .product-price {
         margin-top: 0;
         vertical-align: top; }

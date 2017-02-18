@@ -21,8 +21,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 the_title( '<span class="textBookTitle">', '</span>' );
-if(get_field('subtitle')) { 
-	echo '<span class="textBookTitle">: <span class="subtitle">' . get_field('subtitle') . '</span></span>'; 
+if(get_field('small_subtitle')) { 
+	echo '<span class="textBookTitle">:<span class="subtitle"> ' . get_field('small_subtitle') . '</span></span>';
+}
+if(get_field('subtitle')) {
+	echo '<br><span class="textBookTitle">' . get_field('subtitle') . '</span>';
 }
 if(get_field('author')) {
 	echo '<br><span class="textNormal">' . get_field('author') . '</span>';

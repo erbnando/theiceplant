@@ -20,10 +20,10 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	function woocommerce_template_loop_product_title() {
 		echo '<span class="textBookTitle">' . get_the_title() . '</span>';
 		if(get_field('small_subtitle')) { 
-			echo '<span class="textBookTitle">: <span class="subtitle">' . get_field('small_subtitle') . '</span></span>';
+			echo '<span class="textBookTitle">:<span class="subtitle"> ' . get_field('small_subtitle') . '</span></span>';
 		}
 		if(get_field('subtitle')) {
-			echo '<span class="textBookTitle">' . get_field('subtitle') . '</span>';
+			echo '<br><span class="textBookTitle">' . get_field('subtitle') . '</span>';
 		}
 		if(get_field('author')) {
 			echo '<br><span class="textNormal">' . get_field('author') . '</span>';
