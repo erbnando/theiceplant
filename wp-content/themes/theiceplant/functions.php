@@ -201,4 +201,6 @@ function custom_override_checkout_fields( $fields ) {
     return $fields;
 }
 
+add_filter( 'loop_shop_per_page', create_function( '$cols', 'return -1;' ), 20 );
+
 ?>
