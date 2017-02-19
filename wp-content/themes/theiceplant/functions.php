@@ -203,4 +203,31 @@ function custom_override_checkout_fields( $fields ) {
 
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return -1;' ), 20 );
 
+if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
+
+    /**
+     * Get the product thumbnail, or the placeholder if not set.
+     *
+     * @subpackage  Loop
+     * @param string $size (default: 'shop_catalog')
+     * @param int $deprecated1 Deprecated since WooCommerce 2.0 (default: 0)
+     * @param int $deprecated2 Deprecated since WooCommerce 2.0 (default: 0)
+     * @return string
+     */
+    function woocommerce_get_product_thumbnail( $size = '', $deprecated1 = 0, $deprecated2 = 0 ) {
+        global $post;
+        $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
+
+        if ( has_post_thumbnail() ) {
+            $props = wc_get_product_attachment_props( get_post_thumbnail_id(), $post );
+            return get_the_post_thumbnail( $post->ID, $image_size, array(
+                'title'  => $props['title'],
+                'alt'    => $props['alt'],
+            ) );
+        } elseif ( wc_placeholder_img_src() ) {
+            return wc_placeholder_img( $image_size );
+        }
+    }
+}
+
 ?>

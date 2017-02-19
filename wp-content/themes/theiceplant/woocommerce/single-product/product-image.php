@@ -28,7 +28,7 @@ global $post, $product;
 			$attachment_count = count( $product->get_gallery_attachment_ids() );
 			$gallery          = $attachment_count > 0 ? '[product-gallery]' : '';
 			$props            = wc_get_product_attachment_props( get_post_thumbnail_id(), $post );
-			$image            = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ), array(
+			$image            = get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', '' ), array(
 				'title'	 => $props['title'],
 				'alt'    => $props['alt'],
 			) );
