@@ -476,7 +476,7 @@ button.button.disabled:hover {
           margin-left: 0 !important; } }
       .single-product .product .book-content .image-gallery img {
         margin-bottom: 20px;
-        max-width: 480px;
+        max-width: 100%;
         height: auto; }
       .single-product .product .book-content .image-gallery img:last-child {
         margin-bottom: 0; }
