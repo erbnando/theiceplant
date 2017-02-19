@@ -475,8 +475,9 @@ button.button.disabled:hover {
           width: 100% !important;
           margin-left: 0 !important; } }
       .single-product .product .book-content .image-gallery img {
-        width: 100%;
-        margin-bottom: 20px; }
+        margin-bottom: 20px;
+        max-width: 480px;
+        height: auto; }
       .single-product .product .book-content .image-gallery img:last-child {
         margin-bottom: 0; }
 .single-product .product_cat-shirts {
