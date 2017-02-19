@@ -828,9 +828,10 @@ button.button.disabled:hover {
 header .title {
   width: 26px !important; }
 header #MainMenu {
-  position: relative;
-  z-index: 1; }
+  z-index: 1;
+  top: 50px !important; }
   header #MainMenu .menu-main-menu-container ul {
+    position: absolute;
     padding: 0;
     margin: 0;
     list-style-type: none; }

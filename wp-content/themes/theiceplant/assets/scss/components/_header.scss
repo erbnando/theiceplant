@@ -3,10 +3,11 @@ header {
 		width: 26px!important;
 	}
 	#MainMenu {
-		position: relative;
 		z-index: 1;
+		top: 50px!important;
 		.menu-main-menu-container {
 			ul {
+				position: absolute;
 				padding: 0;
 				margin: 0;
 				list-style-type: none;
