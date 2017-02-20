@@ -133,18 +133,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 		echo '<div class="book-description textNormal">';
 		echo the_content();
 		echo '</div>';
+        if(get_the_content()) {
+            echo '<hr>';
+        }
 
 		if (get_field('about_author')) {
-			echo '<hr>';
 			echo '<div class="about-author textNormalSmall">';
 			echo get_field('about_author');
 			echo '</div>';
+            echo '<hr>';
 		}
+
+        ?>
+        
+        <?php
+        if (get_field('video')) {
+            ?>
+            <video autoplay>
+              <source src="<?php echo get_field('video') ?>" type="video/mp4">
+            </video>
+            <?php
+        }
 
 		$attachment_ids = $product->get_gallery_attachment_ids();
 
 		if (!empty($attachment_ids)) {
-			echo '<hr>';
 			echo '<div class="image-gallery">';
 			foreach($attachment_ids as $item) {
 				$image_link = wp_get_attachment_url($item);

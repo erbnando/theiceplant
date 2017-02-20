@@ -1,18 +1,33 @@
 header {
+	position: absolute;
+	top: 0;
 	.title {
 		width: 26px!important;
 	}
+	#TheIcePlant_LOGO {
+		// top: 65px;
+	}
 	#MainMenu {
 		z-index: 1;
-		top: 50px!important;
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-left: 136px;
+		margin-top: 25px;
+		height: 160px;
+		display: table;
 		.menu-main-menu-container {
+			display: table-cell;
+			vertical-align: middle;
 			ul {
-				position: absolute;
 				padding: 0;
 				margin: 0;
 				list-style-type: none;
 				li {
 					margin-bottom: 10px;
+					&:last-child {
+						// margin-bottom: 0;
+					}
 					a {
 						text-transform: uppercase;
 					}
