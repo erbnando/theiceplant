@@ -160,7 +160,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 		if (!empty($attachment_ids)) {
 			echo '<div class="image-gallery">';
 			foreach($attachment_ids as $item) {
-				$image_link = wp_get_attachment_url($item);
+                $image = get_post($item);
+                $image_link = wp_get_attachment_url($item);
+                if ($image->post_excerpt) {
+                    echo '<span class="textNormalSmall">' . $image->post_excerpt . '</span>';
+                }
 				echo '<img src="' . $image_link . '" />';
 			}
 			echo '</div>';
