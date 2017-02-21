@@ -294,7 +294,7 @@ button.button.disabled:hover {
       margin-top: 220px !important;
       width: 100% !important;
       box-sizing: border-box; } }
-  @media screen and (max-width: 599px) {
+  @media screen and (max-width: 529px) {
     .single-product .product {
       display: block;
       padding: 0 25px !important; } }
@@ -318,7 +318,7 @@ button.button.disabled:hover {
         display: inline-block;
         max-height: 193px;
         text-align: right; }
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 529px) {
           .single-product .product > div .images div {
             width: auto; } }
         .single-product .product > div .images div img {
@@ -342,7 +342,7 @@ button.button.disabled:hover {
       @media screen and (max-width: 899px) {
         .single-product .product > div div.summary {
           width: 100%; } }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 529px) {
         .single-product .product > div div.summary {
           display: block;
           padding-left: 0;
@@ -351,7 +351,7 @@ button.button.disabled:hover {
           padding-right: 0 !important; } }
       .single-product .product > div div.summary .textBookTitle {
         color: black; }
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 529px) {
           .single-product .product > div div.summary .textBookTitle {
             width: 100% !important; } }
         .single-product .product > div div.summary .textBookTitle .subtitle {
@@ -399,7 +399,7 @@ button.button.disabled:hover {
         height: auto;
         top: 50%;
         transform: translateY(-50%); }
-        @media screen and (max-width: 599px) {
+        @media screen and (max-width: 529px) {
           .single-product .product > div div.summary .right-floated {
             position: relative;
             top: 0;
@@ -440,7 +440,7 @@ button.button.disabled:hover {
       position: absolute;
       bottom: -34px;
       left: 130px; }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 529px) {
         .single-product .product > div .books-nav {
           position: relative;
           bottom: 0;
@@ -451,14 +451,14 @@ button.button.disabled:hover {
         margin-left: 10px; }
   .single-product .product hr {
     margin: 8px 0 8px 0; }
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 529px) {
       .single-product .product hr {
         width: 100% !important;
         margin: 25px 0 25px 0; } }
   .single-product .product hr.above-desc {
-    max-width: 100%;
+    max-width: 480px;
     margin: 25px 0 8px 214px; }
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 529px) {
       .single-product .product hr.above-desc {
         width: 100% !important;
         margin: 25px 0 25px 0; } }
@@ -468,15 +468,16 @@ button.button.disabled:hover {
     display: block; }
     @media screen and (max-width: 899px) {
       .single-product .product .book-content {
-        max-width: none !important; } }
-    @media screen and (max-width: 599px) {
+        box-sizing: content-box;
+        width: auto; } }
+    @media screen and (max-width: 529px) {
       .single-product .product .book-content {
         padding-left: 0; } }
     .single-product .product .book-content .book-description {
       width: 100%;
       margin: 0;
       font-size: 13px; }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 529px) {
         .single-product .product .book-content .book-description {
           width: 100% !important;
           margin-left: 0 !important; } }
@@ -489,7 +490,7 @@ button.button.disabled:hover {
       margin: 0 0 25px 0;
       margin-bottom: 0;
       font-size: 10px; }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 529px) {
         .single-product .product .book-content .about-author {
           width: 100% !important;
           margin-left: 0 !important; } }
@@ -503,7 +504,7 @@ button.button.disabled:hover {
     .single-product .product .book-content .image-gallery {
       width: 100%;
       margin: 0 0 25px 0; }
-      @media screen and (max-width: 599px) {
+      @media screen and (max-width: 529px) {
         .single-product .product .book-content .image-gallery {
           width: 100% !important;
           margin-left: 0 !important; } }
