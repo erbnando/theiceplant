@@ -133,21 +133,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 		echo '<div class="book-description textNormal">';
 		echo the_content();
 		echo '</div>';
-        if(get_the_content()) {
-            echo '<hr>';
-        }
 
 		if (get_field('about_author')) {
+            if(get_the_content()) {
+                echo '<hr>';
+            }
 			echo '<div class="about-author textNormalSmall">';
 			echo get_field('about_author');
 			echo '</div>';
-            echo '<hr>';
 		}
 
         ?>
         
         <?php
         if (get_field('video')) {
+            if (get_field('about_author')) {
+                echo '<hr>';
+            }
             ?>
             <video autoplay>
               <source src="<?php echo get_field('video') ?>" type="video/mp4">
@@ -158,6 +160,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$attachment_ids = $product->get_gallery_attachment_ids();
 
 		if (!empty($attachment_ids)) {
+            if (!get_field('video')) {
+                echo '<hr>';
+            }
 			echo '<div class="image-gallery">';
 			foreach($attachment_ids as $item) {
                 $image = get_post($item);

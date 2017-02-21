@@ -80,6 +80,9 @@
                         p {
                             margin-top: 0!important;
                         }
+                        span {
+                            display: inherit;
+                        }
                         @media screen and (max-width: 599px) {
                             width: 100%!important;
                         }
@@ -221,6 +224,9 @@
                     display: inline-block;
                     p {
                         margin-top: 0;
+                    }
+                    span {
+                        line-height: inherit;
                     }
                 }
                 .stock.out-of-stock {
@@ -393,6 +399,7 @@
             video {
                 width: 100%;
                 margin-bottom: 20px;
+                vertical-align: bottom;
             }
             .image-gallery {
                 width: 100%;
