@@ -519,6 +519,8 @@ button.button.disabled:hover {
         display: block; }
       .single-product .product .book-content .image-gallery img:last-child {
         margin-bottom: 0; }
+.single-product .product_cat-books-special-editions div div.summary {
+  margin-bottom: 0 !important; }
 .single-product .product_cat-shirts {
   max-width: 850px;
   font-size: 0;
