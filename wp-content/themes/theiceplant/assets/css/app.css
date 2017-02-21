@@ -457,15 +457,14 @@ button.button.disabled:hover {
     margin: 8px 0 8px 0; }
     @media screen and (max-width: 529px) {
       .single-product .product hr {
-        width: 100% !important;
-        margin: 25px 0 25px 0; } }
+        width: 100% !important; } }
   .single-product .product hr.above-desc {
     max-width: 480px;
     margin: 25px 0 8px 214px; }
     @media screen and (max-width: 529px) {
       .single-product .product hr.above-desc {
         width: 100% !important;
-        margin: 25px 0 25px 0; } }
+        margin: 25px 0 8px 0; } }
   .single-product .product .book-content {
     padding-left: 214px;
     max-width: 480px;

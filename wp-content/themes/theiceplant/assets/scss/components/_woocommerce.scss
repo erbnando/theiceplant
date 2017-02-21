@@ -344,7 +344,7 @@
             margin: 8px 0 8px 0;
             @media screen and (max-width: 529px) {
                 width: 100%!important;
-                margin: 25px 0 25px 0;
+                // margin: 25px 0 25px 0;
             }
         }
         hr.above-desc {
@@ -352,7 +352,7 @@
             margin: 25px 0 8px 214px;
             @media screen and (max-width: 529px) {
                 width: 100%!important;
-                margin: 25px 0 25px 0;
+                margin: 25px 0 8px 0;
             }
         }
         .book-content {
