@@ -629,7 +629,7 @@ button.button.disabled:hover {
     letter-spacing: 0.1em;
     line-height: 1.3em;
     padding-right: 0; }
-    @media screen and (max-width: 599px) {
+    @media screen and (max-width: 529px) {
       .single-product .product_cat-trilogy > div div.summary {
         margin-top: 40px;
         padding-left: 0; } }
