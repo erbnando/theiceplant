@@ -35,7 +35,9 @@ get_header( 'shop' ); ?>
         <?php while ( have_posts() ) : the_post(); ?>
 
             <?php
-            if ( has_term( 'shirts', 'product_cat' ) ) {
+            if ( has_term( 'trilogy', 'product_cat' ) ) {
+                wc_get_template_part( 'content', 'single-product-trilogy' );
+            } elseif ( has_term( 'shirts', 'product_cat' ) ) {
                 wc_get_template_part( 'content', 'single-product-shirts' );
             } else {
                 wc_get_template_part( 'content', 'single-product' );
