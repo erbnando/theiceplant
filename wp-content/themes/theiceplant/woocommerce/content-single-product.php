@@ -72,7 +72,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
         <?php global $product; ?>
 
-        <?php if ($product->is_visible()) { ?>
+        <?php if ($product->is_visible() && has_term( 'books', 'product_cat' )) { ?>
 
     		<div class="books-nav">
     			<?php

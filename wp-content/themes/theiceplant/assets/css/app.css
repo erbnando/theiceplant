@@ -291,13 +291,13 @@ button.button.disabled:hover {
   @media screen and (max-width: 899px) {
     .single-product .product {
       margin-left: 0 !important;
-      margin-top: 220px !important; } }
+      margin-top: 220px !important;
+      width: 100% !important;
+      box-sizing: border-box; } }
   @media screen and (max-width: 599px) {
     .single-product .product {
-      width: 100% !important;
       display: block;
-      padding: 0 25px !important;
-      box-sizing: border-box; } }
+      padding: 0 25px !important; } }
   .single-product .product > div {
     position: relative;
     display: inline-block;
@@ -464,7 +464,8 @@ button.button.disabled:hover {
         margin: 25px 0 25px 0; } }
   .single-product .product .book-content {
     padding-left: 214px;
-    max-width: 480px; }
+    max-width: 480px;
+    display: block; }
     @media screen and (max-width: 899px) {
       .single-product .product .book-content {
         max-width: none !important; } }
