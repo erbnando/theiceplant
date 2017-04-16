@@ -66,11 +66,6 @@ function custom_pre_get_posts_query( $q ) {
 	remove_action( 'pre_get_posts', 'custom_pre_get_posts_query' );
 }
 
-function my_theme_add_editor_styles() {
-    add_editor_style( 'assets/css/editor-style.css' );
-}
-add_action( 'init', 'my_theme_add_editor_styles' );
-
 // Menu
 register_nav_menus( array(
 	'main_menu' => 'Main Menu'
@@ -252,5 +247,10 @@ add_filter( 'wp_get_attachment_image_attributes','isa_add_img_title', 10, 2 );
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page();   
 }
+
+function remove_editor_menu() {
+  remove_action('admin_menu', '_add_themes_utility_last', 101);
+}
+add_action('_admin_menu', 'remove_editor_menu', 1);
 
 ?>
