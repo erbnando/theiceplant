@@ -64,10 +64,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 				 */
 				do_action( 'woocommerce_single_product_summary' );
 			?>
-			<?php if (get_field('right_floated_image')) { ?>
-				<a <?php if (get_field('right_floated_image_url_new_tab')) { ?>target="_blank"<?php } ?> href="<?php the_field('right_floated_image_url'); ?>"><img class="right-floated" src="<?php the_field('right_floated_image'); ?>" /></a>
-			<?php }
-			?>
+			<?php
+			$right_floated_image = get_field('right_floated_image');
+			if( !empty($right_floated_image) ):
+				$right_floated_image_url = $right_floated_image['url'];
+				$right_floated_image_title = $right_floated_image['title'];
+				$right_floated_image_alt = $right_floated_image['alt'];
+				$right_floated_image_caption = $right_floated_image['caption'];
+				?>
+				<a <?php if (get_field('right_floated_image_url_new_tab')) { ?>target="_blank"<?php } ?> href="<?php the_field('right_floated_image_url'); ?>" title="<?php echo $right_floated_image_alt; ?>">
+					<img class="right-floated" src="<?php echo $right_floated_image_url; ?>" alt="<?php echo $right_floated_image_alt; ?>" />
+
+				</a>
+			<?php endif; ?>
 		</div><!-- .summary -->
 
         <?php global $product; ?>
@@ -170,7 +179,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 if ($image->post_excerpt) {
                     echo '<span class="textNormalSmall">' . $image->post_excerpt . '</span>';
                 }
-				echo '<img src="' . $image_link . '" />';
+				echo '<img src="' . $image_link . '" alt="' . wp_prepare_attachment_for_js($item)['alt'] . '" title="' . wp_prepare_attachment_for_js($item)['alt'] . '" />';
 			}
 			echo '</div>';
 		}

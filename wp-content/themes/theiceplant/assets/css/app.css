@@ -91,6 +91,9 @@ button.button.disabled:hover {
         margin-bottom: 2px;
         display: block; }
 
+.woocommerce-Price-currencySymbol {
+  display: inline !important; }
+
 .page-template-page-homepage .main {
   position: relative;
   margin-left: 279px;
@@ -935,8 +938,12 @@ header {
         list-style-type: none; }
         header #MainMenu .menu-main-menu-container ul li {
           margin-bottom: 10px; }
+          header #MainMenu .menu-main-menu-container ul li:last-child {
+            margin-bottom: 0; }
           header #MainMenu .menu-main-menu-container ul li a {
             text-transform: uppercase; }
+    header #MainMenu .fa-instagram {
+      font-size: 18px; }
 
 .page-template-page-five-year .main {
   position: relative;

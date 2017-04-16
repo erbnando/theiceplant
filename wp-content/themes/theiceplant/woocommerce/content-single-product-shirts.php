@@ -78,8 +78,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 			 */
 			// do_action( 'woocommerce_after_single_product_summary' );
 		?>
-
-		<?php the_post_thumbnail(); ?>
+		<?php
+		the_post_thumbnail();
+		?>
 
 		<meta itemprop="url" content="<?php the_permalink(); ?>" />
 
@@ -88,11 +89,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 		global $product;
 		$attachment_ids = $product->get_gallery_attachment_ids();
 		$image_link = wp_get_attachment_url($attachment_ids[0]);
-		
+			
 		?>
 
 		<div class="gallery">
-			<img src="<?php echo $image_link; ?>" />	
+			<img src="<?php echo $image_link; ?>" alt="<?php echo wp_prepare_attachment_for_js($attachment_ids[0])['alt']; ?>" title="<?php echo wp_prepare_attachment_for_js($attachment_ids[0])['alt']; ?>" />
+
 		</div>
 	</div>
 

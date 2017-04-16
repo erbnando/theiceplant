@@ -26,13 +26,16 @@ header {
 				li {
 					margin-bottom: 10px;
 					&:last-child {
-						// margin-bottom: 0;
+						margin-bottom: 0;
 					}
 					a {
 						text-transform: uppercase;
 					}
 				}
 			}
+		}
+		.fa-instagram {
+			font-size: 18px;
 		}
 	}
 }

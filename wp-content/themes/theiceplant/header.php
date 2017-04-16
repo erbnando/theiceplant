@@ -10,6 +10,8 @@
 <meta name="Description" content="The Ice Plant is a publishing house based in Los Angeles, producing artist books and other printed matter since 2006." />
 <meta name="Keywords" content="ice, plant, books, publisher, art, photography, photobooks, artist books, Los Angeles, Mike Slack, OK , Scorpio, Pyramids, polaroid, Jason Fulford, Raising Frogs,notes, Ron Jude, emmett, Other Nature, Pat O'Neill, Another Kind of Record, Charles Gute, Revisions, Queries, C'est le PIed, Tamara Shopsin, Ed Panar, Animals that Saw Me, Charlotte Dumas, Retrieved, search dogs, rescue dogs, seth lower, sun shone glaringly, found rolling stones, bad luck, hot rocks, Jacques Marlow" />
 
+<script src="https://use.fontawesome.com/0b077d00f2.js"></script>
+
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
@@ -27,7 +29,7 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class( 'class-name' ); ?>>
+<body <?php body_class( 'body' ); ?>>
 
 <header>
 	<div id="TheIcePLant">
@@ -39,6 +41,9 @@
 	</div>
 
 	<div id="MainMenu">
-		<?php wp_nav_menu(); ?>
+		<?php $ig = get_field("instagram_url", "option"); ?>
+		<?php wp_nav_menu( array( 
+			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<a href="' . $ig . '" target="_blank"><li><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>'
+			) ); ?>
 	</div>
 </header>
