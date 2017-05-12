@@ -93,7 +93,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 		?>
 
 		<div class="gallery">
-			<img src="<?php echo $image_link; ?>" alt="<?php echo wp_prepare_attachment_for_js($attachment_ids[0])['alt']; ?>" title="<?php echo wp_prepare_attachment_for_js($attachment_ids[0])['alt']; ?>" />
+			<?php
+				$alt = wp_prepare_attachment_for_js($attachment_ids[0]);
+			?>
+			<img src="<?php echo $image_link; ?>" alt="<?php echo $alt['alt']; ?>" title="<?php echo $alt['alt']; ?>" />
 
 		</div>
 	</div>
