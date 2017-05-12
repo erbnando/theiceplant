@@ -43,7 +43,7 @@
 	<div id="MainMenu">
 		<?php $ig = get_field("instagram_url", "option"); ?>
 		<?php wp_nav_menu( array( 
-			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<a href="' . $ig . '" target="_blank"><li><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>'
+			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>'
 			) ); ?>
 	</div>
 </header>
