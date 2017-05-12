@@ -179,7 +179,8 @@ if ( ! defined( 'ABSPATH' ) ) {
                 if ($image->post_excerpt) {
                     echo '<span class="textNormalSmall">' . $image->post_excerpt . '</span>';
                 }
-				echo '<img src="' . $image_link . '" alt="' . wp_prepare_attachment_for_js($item)['alt'] . '" title="' . wp_prepare_attachment_for_js($item)['alt'] . '" />';
+                $alt = wp_prepare_attachment_for_js($item);
+				echo '<img src="' . $image_link . '" alt="' . $alt['alt'] . '" title="' . $alt['alt'] . '" />';
 			}
 			echo '</div>';
 		}
