@@ -10,7 +10,7 @@
 <meta name="Description" content="The Ice Plant is a publishing house based in Los Angeles, producing artist books and other printed matter since 2006." />
 <meta name="Keywords" content="ice, plant, books, publisher, art, photography, photobooks, artist books, Los Angeles, Mike Slack, OK , Scorpio, Pyramids, polaroid, Jason Fulford, Raising Frogs,notes, Ron Jude, emmett, Other Nature, Pat O'Neill, Another Kind of Record, Charles Gute, Revisions, Queries, C'est le PIed, Tamara Shopsin, Ed Panar, Animals that Saw Me, Charlotte Dumas, Retrieved, search dogs, rescue dogs, seth lower, sun shone glaringly, found rolling stones, bad luck, hot rocks, Jacques Marlow" />
 
-<script src="https://use.fontawesome.com/0b077d00f2.js"></script>
+<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/fonts/font-awesome/css/font-awesome.min.css">
 
 <script type="text/javascript">
 
