@@ -1,2 +1,7 @@
 node_modules/
 .sass-cache/*
+error_log
+**/error_log
+php.ini
+.*
+!.gitignore
