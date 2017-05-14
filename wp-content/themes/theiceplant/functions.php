@@ -253,4 +253,9 @@ function remove_editor_menu() {
 }
 add_action('_admin_menu', 'remove_editor_menu', 1);
 
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
 ?>
