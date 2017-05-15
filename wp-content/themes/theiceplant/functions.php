@@ -225,14 +225,6 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
     }
 }
 
-if (!function_exists('woocommerce_template_loop_add_to_cart')) {
-    function woocommerce_template_loop_add_to_cart() {
-        global $product;
-        if ( ! $product->is_in_stock() || ! $product->is_purchasable() ) return;
-        woocommerce_get_template('loop/add-to-cart.php');
-    }
-}
-
 function isa_add_img_title( $attr, $attachment = null ) {
  
     $img_title = trim( strip_tags( $attachment->post_title ) );

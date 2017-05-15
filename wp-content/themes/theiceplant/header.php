@@ -42,8 +42,14 @@
 
 	<div id="MainMenu">
 		<?php $ig = get_field("instagram_url", "option"); ?>
+		<?php 
+		global $woocommerce; 
+		$count = $woocommerce->cart->cart_contents_count; 
+		$cart_url = $woocommerce->cart->get_cart_url();
+		$items_wrap = ($count ? '<ul id="%1$s" class="%2$s">%3$s<li><a href="' . $cart_url .'">CART (' . $count . ')</a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>' : '<ul id="%1$s" class="%2$s">%3$s<li><a href="' . $cart_url .'">CART</a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>')
+		?>
 		<?php wp_nav_menu( array( 
-			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s<li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>'
+			'items_wrap' => $items_wrap
 			) ); ?>
 	</div>
 </header>
