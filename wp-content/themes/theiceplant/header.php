@@ -44,9 +44,9 @@
 		<?php $ig = get_field("instagram_url", "option"); ?>
 		<?php 
 		global $woocommerce; 
-		$count = $woocommerce->cart->cart_contents_count; 
-		$cart_url = $woocommerce->cart->get_cart_url();
-		$items_wrap = ($count ? '<ul id="%1$s" class="%2$s">%3$s<li><a class="menu-cart" href="' . $cart_url .'">CART (<span>' . $count . '</span>)</a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>' : '<ul id="%1$s" class="%2$s">%3$s<li><a class="menu-cart" href="' . $cart_url .'">CART <span></span></a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>')
+		$count = WC()->cart->get_cart_contents_count(); 
+		$cart_url = wc_get_cart_url();
+		$items_wrap = ($count ? '<ul id="%1$s" class="%2$s">%3$s<li><a class="cart-contents" href="' . $cart_url .'">CART (<span>' . $count . '</span>)</a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>' : '<ul id="%1$s" class="%2$s">%3$s<li><a class="cart-contents" href="' . $cart_url .'">CART</a></li><li><a href="' . $ig . '" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li></ul>')
 		?>
 		<?php wp_nav_menu( array( 
 			'items_wrap' => $items_wrap
