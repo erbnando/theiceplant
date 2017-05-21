@@ -65,11 +65,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
          * @hooked woocommerce_template_loop_price - 10
          */
         do_action( 'woocommerce_after_shop_loop_item_title' );
-        if ( $product->is_in_stock() ) {
-            woocommerce_template_loop_add_to_cart();
-        } else {
-            echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>';
-        }
+        woocommerce_template_loop_add_to_cart();
         ?>
         </div>
         <?php

@@ -31,5 +31,5 @@ if(get_field('author')) {
 	echo '<br><span class="textNormal">' . get_field('author') . '</span>';
 }
 if(get_field('details')) {
-	echo '<br><span class="textNormalSmall">' . get_field('details') . '</span>';
+	echo '<br><span class="textNormalSmall bookdeets">' . get_field('details') . '</span>';
 }

@@ -22,10 +22,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-if ( ! $product->is_purchasable() ) {
-	return;
-}
-
 ?>
 
 <?php
@@ -38,30 +34,38 @@ if ( ! $product->is_purchasable() ) {
 
 <?php if ( $product->is_in_stock() ) : ?>
 
-	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
+	<?php if ($product->get_price()) { ?>
 
-	<form class="cart" method="post" enctype='multipart/form-data'>
-	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
+		<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-	 	<?php
-	 		if ( ! $product->is_sold_individually() ) {
-	 			woocommerce_quantity_input( array(
-	 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
-	 				'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
-	 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
-	 			) );
-	 		}
-	 	?>
+		<form class="cart" method="post" enctype='multipart/form-data'>
+		 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-	 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
+		 	<?php
+		 		if ( ! $product->is_sold_individually() ) {
+		 			woocommerce_quantity_input( array(
+		 				'min_value'   => apply_filters( 'woocommerce_quantity_input_min', 1, $product ),
+		 				'max_value'   => apply_filters( 'woocommerce_quantity_input_max', $product->backorders_allowed() ? '' : $product->get_stock_quantity(), $product ),
+		 				'input_value' => ( isset( $_POST['quantity'] ) ? wc_stock_amount( $_POST['quantity'] ) : 1 )
+		 			) );
+		 		}
+		 	?>
 
-	 	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
+		 	<input type="hidden" name="add-to-cart" value="<?php echo esc_attr( $product->id ); ?>" />
 
-		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
-	</form>
+		 	<button type="submit" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
-	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+			<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+		</form>
+
+		<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
+
+	<?php } else {
+		echo '<span class="textNormalSmall notavail">NOT AVAILABLE</span>';
+	} ?>
 
 <?php else:
+
 	echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>'; 
+
 endif; ?>

@@ -75,6 +75,14 @@
                             width: 100%!important;
                         }
                     }
+                    .bookdeets {
+                        > p {
+                            margin-bottom: 0;
+                        }
+                        > p:not(:first-child) {
+                            margin-top: 10px!important;
+                        }
+                    }
                     .textNormalSmall {
                         display: inline-block;
                         margin-top: 16px;
@@ -119,6 +127,11 @@
                         text-transform: uppercase;
                         letter-spacing: 1px;
                         padding-top: 8px;
+                    }
+                    .notavail {
+                        display: block;
+                        margin-top: 10px;
+                        color: red;
                     }
                 }
             }
@@ -221,6 +234,11 @@
                     color: black;
                     line-height: normal;
                 }
+                .bookdeets {
+                    > p {
+                        margin-bottom: 0;
+                    }
+                }
                 .textNormalSmall {
                     margin-top: 16px;
                     display: inline-block;
@@ -237,6 +255,11 @@
                 .out-of-stock {
                     color: red;
                     margin-top: 10px;
+                }
+                .notavail {
+                    display: block;
+                    margin-top: 10px;
+                    color: red;
                 }
                 .product-price {
                     margin-top: 0;

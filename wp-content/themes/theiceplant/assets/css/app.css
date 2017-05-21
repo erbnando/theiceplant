@@ -241,6 +241,10 @@ button.button.disabled:hover {
           @media screen and (max-width: 599px) {
             .archive .products .product > div .product-details .textNormal {
               width: 100% !important; } }
+        .archive .products .product > div .product-details .bookdeets > p {
+          margin-bottom: 0; }
+        .archive .products .product > div .product-details .bookdeets > p:not(:first-child) {
+          margin-top: 10px !important; }
         .archive .products .product > div .product-details .textNormalSmall {
           display: inline-block;
           margin-top: 16px; }
@@ -278,6 +282,10 @@ button.button.disabled:hover {
           text-transform: uppercase;
           letter-spacing: 1px;
           padding-top: 8px; }
+        .archive .products .product > div .product-details .notavail {
+          display: block;
+          margin-top: 10px;
+          color: red; }
     .archive .products .product hr {
       margin: 25px 0 25px 214px; }
       @media screen and (max-width: 599px) {
@@ -365,6 +373,8 @@ button.button.disabled:hover {
       .single-product .product > div div.summary .textNormal {
         color: black;
         line-height: normal; }
+      .single-product .product > div div.summary .bookdeets > p {
+        margin-bottom: 0; }
       .single-product .product > div div.summary .textNormalSmall {
         margin-top: 16px;
         display: inline-block; }
@@ -377,6 +387,10 @@ button.button.disabled:hover {
       .single-product .product > div div.summary .out-of-stock {
         color: red;
         margin-top: 10px; }
+      .single-product .product > div div.summary .notavail {
+        display: block;
+        margin-top: 10px;
+        color: red; }
       .single-product .product > div div.summary .product-price {
         margin-top: 0;
         vertical-align: top; }
