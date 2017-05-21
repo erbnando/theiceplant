@@ -375,6 +375,8 @@ button.button.disabled:hover {
         line-height: normal; }
       .single-product .product > div div.summary .bookdeets > p {
         margin-bottom: 0; }
+      .single-product .product > div div.summary .bookdeets > p:not(:first-child) {
+        margin-top: 10px !important; }
       .single-product .product > div div.summary .textNormalSmall {
         margin-top: 16px;
         display: inline-block; }

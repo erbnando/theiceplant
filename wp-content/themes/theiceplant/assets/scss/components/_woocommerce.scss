@@ -238,6 +238,9 @@
                     > p {
                         margin-bottom: 0;
                     }
+                    > p:not(:first-child) {
+                        margin-top: 10px!important;
+                    }
                 }
                 .textNormalSmall {
                     margin-top: 16px;
