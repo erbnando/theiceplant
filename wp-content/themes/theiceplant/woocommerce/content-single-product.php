@@ -166,10 +166,24 @@ if ( ! defined( 'ABSPATH' ) ) {
             <?php
         }
 
+    	if (get_field('slider')) {    
+            if (!get_field('video')) {
+                echo '<hr>';
+            }
+			$slider_images = get_field('slider');
+			if( $slider_images ): ?>
+			    <div class="slider">
+			        <?php foreach( $slider_images as $image ): ?>
+						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+			        <?php endforeach; ?>
+			    </div>
+			<?php endif;
+		}
+
 		$attachment_ids = $product->get_gallery_attachment_ids();
 
 		if (!empty($attachment_ids)) {
-            if (!get_field('video')) {
+            if (!get_field('slider')) {
                 echo '<hr>';
             }
 			echo '<div class="image-gallery">';

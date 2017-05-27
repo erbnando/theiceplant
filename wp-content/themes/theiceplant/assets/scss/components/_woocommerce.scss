@@ -382,13 +382,16 @@
             }
         }
         .book-content {
-            padding-left: 214px;
             max-width: 480px;
             display: block;
             @media screen and (max-width: 899px) {
                 //max-width: none!important;
                 box-sizing: content-box;
                 width: auto;
+            }
+            @media screen and (min-width: 530px) {
+                width: calc(100% - 214px)!important;
+                left: 214px;            
             }
             @media screen and (max-width: 529px) {
                 padding-left: 0;
@@ -428,6 +431,10 @@
                 width: 100%;
                 margin-bottom: 20px;
                 vertical-align: bottom;
+            }
+            .slider {
+                width: 100%;
+                margin-bottom: 20px;
             }
             .image-gallery {
                 width: 100%;

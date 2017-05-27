@@ -5,6 +5,7 @@ function wpdocs_theme_name_scripts() {
     wp_enqueue_style( 'legacy-styles', get_template_directory_uri() . '/assets/css/legacy.css');
 
     wp_enqueue_script( 'app-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true );
+    wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array(), '1.6.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
@@ -25,7 +26,7 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 		if(get_field('subtitle')) {
 			echo '<br><span class="textBookTitle">' . get_field('subtitle') . '</span>';
 		}
-		if(get_field('author')) {
+		if(get_field('authoptsr')) {
 			echo '<br><span class="textNormal">' . get_field('author') . '</span>';
 		}
 		if(get_field('details')) {

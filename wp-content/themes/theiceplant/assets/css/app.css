@@ -485,13 +485,16 @@ button.button.disabled:hover {
         width: 100% !important;
         margin: 25px 0 8px 0; } }
   .single-product .product .book-content {
-    padding-left: 214px;
     max-width: 480px;
     display: block; }
     @media screen and (max-width: 899px) {
       .single-product .product .book-content {
         box-sizing: content-box;
         width: auto; } }
+    @media screen and (min-width: 530px) {
+      .single-product .product .book-content {
+        width: calc(100% - 214px) !important;
+        left: 214px; } }
     @media screen and (max-width: 529px) {
       .single-product .product .book-content {
         padding-left: 0; } }
@@ -524,6 +527,9 @@ button.button.disabled:hover {
       width: 100%;
       margin-bottom: 20px;
       vertical-align: bottom; }
+    .single-product .product .book-content .slider {
+      width: 100%;
+      margin-bottom: 20px; }
     .single-product .product .book-content .image-gallery {
       width: 100%;
       margin: 0 0 25px 0; }
