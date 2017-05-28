@@ -5,15 +5,15 @@
 *
 *  All the logic for this field type
 *
-*  @class 		acf_field_date_time_picker
+*  @class 		acf_field_date_and_time_picker
 *  @extends		acf_field
 *  @package		ACF
 *  @subpackage	Fields
 */
 
-if( ! class_exists('acf_field_date_time_picker') ) :
+if( ! class_exists('acf_field_date_and_time_picker') ) :
 
-class acf_field_date_time_picker extends acf_field {
+class acf_field_date_and_time_picker extends acf_field {
 	
 	
 	/*
@@ -51,6 +51,7 @@ class acf_field_date_time_picker extends acf_field {
 	        'timezoneText'		=> _x('Time Zone',		'Date Time Picker JS timezoneText', 	'acf'),
 	        'currentText'		=> _x('Now',			'Date Time Picker JS currentText', 		'acf'),
 	        'closeText'			=> _x('Done',			'Date Time Picker JS closeText', 		'acf'),
+	        'selectText'		=> _x('Select',			'Date Time Picker JS selectText', 		'acf'),
 	        'amNames'			=> array(
 		        					_x('AM',			'Date Time Picker JS amText', 			'acf'),
 									_x('A',				'Date Time Picker JS amTextShort', 		'acf'),
@@ -82,6 +83,10 @@ class acf_field_date_time_picker extends acf_field {
 	
 	function input_admin_enqueue_scripts() {
 		
+		// bail ealry if no enqueue
+	   	if( !acf_get_setting('enqueue_datetimepicker') ) return;
+	   	
+	   	
 		// vars
 		$version = '1.6.1';
 		
@@ -92,63 +97,6 @@ class acf_field_date_time_picker extends acf_field {
 		
 		// style
 		wp_enqueue_style('acf-timepicker', acf_get_dir('assets/inc/timepicker/jquery-ui-timepicker-addon.min.css'), '', $version);
-		
-	}
-	
-	
-	/*
-	*  _split_date_time
-	*
-	*  This function will split a format string into seperate date and time
-	*
-	*  @type	function
-	*  @date	26/05/2016
-	*  @since	5.3.8
-	*
-	*  @param	$format (string)
-	*  @return	$formats (array)
-	*/
-	
-	function _split_date_time( $date_time = '' ) {
-		
-		// vars
-		$time = array( 'a', 'A', 'h', 'g', 'H', 'G', 'i', 's' );
-		$chars = str_split($date_time);
-		$index = false;
-		
-		
-		// default
-		$data = array(
-			'date' => $date_time,
-			'time' => ''
-		);
-		
-		
-		// loop
-		foreach( $chars as $i => $c ) {
-			
-			// i is set, break loop
-			if( in_array($c, $time) ) {
-				
-				$index = $i;
-				break;
-				
-			}
-			
-		}
-		
-		
-		// if index found
-		if( $index !== false ) {
-			
-			$data['date'] = trim(substr($date_time, 0, $i));
-			$data['time'] = trim(substr($date_time, $i));
-			
-		}
-	
-		
-		// return
-		return $data;	
 		
 	}
 	
@@ -168,23 +116,20 @@ class acf_field_date_time_picker extends acf_field {
 	function render_field( $field ) {
 		
 		// format value
+		$hidden_value = '';
 		$display_value = '';
 		
 		if( $field['value'] ) {
 			
-			// get time
-			$unixtimestamp = strtotime( $field['value'] );
-			
-			
-			// translate
-			$display_value = date_i18n($field['display_format'], $unixtimestamp);
+			$hidden_value = acf_format_date( $field['value'], 'Y-m-d H:i:s' );
+			$display_value = acf_format_date( $field['value'], $field['display_format'] );
 			
 		}
 		
 		
 		// convert display_format to date and time
 		// the letter 'm' is used for date and minute in JS, so this must be done here in PHP
-		$formats = $this->_split_date_time($field['display_format']);
+		$formats = acf_split_date_time($field['display_format']);
 		
 		
 		// vars
@@ -192,7 +137,7 @@ class acf_field_date_time_picker extends acf_field {
 		$div = array(
 			'class'					=> 'acf-date-time-picker acf-input-wrap',
 			'data-date_format'		=> acf_convert_date_to_js($formats['date']),
-			'data-time_format'		=> acf_convert_date_to_js($formats['time']),
+			'data-time_format'		=> acf_convert_time_to_js($formats['time']),
 			'data-first_day'		=> $field['first_day'],
 		);
 		$hidden = array(
@@ -200,7 +145,7 @@ class acf_field_date_time_picker extends acf_field {
 			'class' 				=> 'input-alt',
 			'type'					=> 'hidden',
 			'name'					=> $field['name'],
-			'value'					=> $field['value'],
+			'value'					=> $hidden_value,
 		);
 		$input = array(
 			'class' 				=> 'input',
@@ -240,6 +185,13 @@ class acf_field_date_time_picker extends acf_field {
 		global $wp_locale;
 		
 		
+		// vars
+		$d_m_Y = date_i18n('d/m/Y g:i a');
+		$m_d_Y = date_i18n('m/d/Y g:i a');
+		$F_j_Y = date_i18n('F j, Y g:i a');
+		$Ymd = date_i18n('Y-m-d H:i:s');
+		
+		
 		// display_format
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Display Format','acf'),
@@ -248,10 +200,11 @@ class acf_field_date_time_picker extends acf_field {
 			'name'			=> 'display_format',
 			'other_choice'	=> 1,
 			'choices'		=> array(
-				'd/m/Y g:i a'	=> date('d/m/Y g:i a'),
-				'm/d/Y g:i a'	=> date('m/d/Y g:i a'),
-				'F j, Y g:i a'	=> date('F j, Y g:i a'),
-				'Y-m-d H:i:s'	=> date('Y-m-d H:i:s'),
+				'd/m/Y g:i a'	=> '<span>' . $d_m_Y . '</span><code>d/m/Y g:i a</code>',
+				'm/d/Y g:i a'	=> '<span>' . $m_d_Y . '</span><code>m/d/Y g:i a</code>',
+				'F j, Y g:i a'	=> '<span>' . $F_j_Y . '</span><code>F j, Y g:i a</code>',
+				'Y-m-d H:i:s'	=> '<span>' . $Ymd . '</span><code>Y-m-d H:i:s</code>',
+				'other'			=> '<span>' . __('Custom:','acf') . '</span>'
 			)
 		));
 				
@@ -264,10 +217,11 @@ class acf_field_date_time_picker extends acf_field {
 			'name'			=> 'return_format',
 			'other_choice'	=> 1,
 			'choices'		=> array(
-				'd/m/Y g:i a'	=> date('d/m/Y g:i a'),
-				'm/d/Y g:i a'	=> date('m/d/Y g:i a'),
-				'F j, Y g:i a'	=> date('F j, Y g:i a'),
-				'Y-m-d H:i:s'	=> date('Y-m-d H:i:s'),
+				'd/m/Y g:i a'	=> '<span>' . $d_m_Y . '</span><code>d/m/Y g:i a</code>',
+				'm/d/Y g:i a'	=> '<span>' . $m_d_Y . '</span><code>m/d/Y g:i a</code>',
+				'F j, Y g:i a'	=> '<span>' . $F_j_Y . '</span><code>F j, Y g:i a</code>',
+				'Y-m-d H:i:s'	=> '<span>' . $Ymd . '</span><code>Y-m-d H:i:s</code>',
+				'other'			=> '<span>' . __('Custom:','acf') . '</span>'
 			)
 		));
 				
@@ -302,32 +256,16 @@ class acf_field_date_time_picker extends acf_field {
 	
 	function format_value( $value, $post_id, $field ) {
 		
-		// bail early if no value
-		if( empty($value) ) return $value;
-		
-		
-		// get time
-		$unixtimestamp = strtotime( $value );
-		$format = $field['return_format'];
-		
-		
-		// bail early if timestamp is not correct
-		if( !$unixtimestamp ) return $value;
-		
-		
-		// translate
-		$value = date_i18n($format, $unixtimestamp);
-		
-		
-		// return
-		return $value;
+		return acf_format_date( $value, $field['return_format'] );
 		
 	}
 	
 }
 
-new acf_field_date_time_picker();
 
-endif;
+// initialize
+acf_register_field_type( new acf_field_date_and_time_picker() );
+
+endif; // class_exists check
 
 ?>
