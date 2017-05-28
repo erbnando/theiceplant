@@ -671,7 +671,7 @@ button.button.disabled:hover {
       font-size: normal;
       letter-spacing: 0.1em; }
 
-.woocommerce-message, .woocommerce-error {
+.woocommerce-message, .woocommerce-error, .woocommerce-info {
   border: none;
   background: transparent;
   margin: 10px 0 0 0 !important;
@@ -683,9 +683,9 @@ button.button.disabled:hover {
   display: block;
   color: black;
   padding: 0 !important; }
-  .woocommerce-message:before, .woocommerce-error:before {
+  .woocommerce-message:before, .woocommerce-error:before, .woocommerce-info:before {
     display: none; }
-  .woocommerce-message a, .woocommerce-error a {
+  .woocommerce-message a, .woocommerce-error a, .woocommerce-info a {
     background: transparent !important;
     color: black !important;
     font-family: Arial, Helvetica, sans-serif;
@@ -698,7 +698,7 @@ button.button.disabled:hover {
     padding: 6px 5px 5px 5px !important;
     display: inline-block;
     margin-top: 0 !important; }
-    .woocommerce-message a:hover, .woocommerce-error a:hover {
+    .woocommerce-message a:hover, .woocommerce-error a:hover, .woocommerce-info a:hover {
       color: #3CF !important; }
 
 .woocommerce-error {
