@@ -26,7 +26,7 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 		if(get_field('subtitle')) {
 			echo '<br><span class="textBookTitle">' . get_field('subtitle') . '</span>';
 		}
-		if(get_field('authoptsr')) {
+		if(get_field('author')) {
 			echo '<br><span class="textNormal">' . get_field('author') . '</span>';
 		}
 		if(get_field('details')) {
