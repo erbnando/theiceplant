@@ -89,10 +89,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     					echo '<a class="book-prev" href="' . get_permalink(get_adjacent_post_product(true,'',false)) . '"><<</a>';
     				} else {
     					$args = array(
-    						'numberposts' => 1,
+    						'numberposts' => 5,
     						'post_type' => 'product',
                             'product_cat' => 'books',
-                            'orderby' => 'ASC',
+                            'orderby' => 'menu_order',
                             'order' => 'DESC',
     					);
     					$desc_posts = get_posts($args);
@@ -108,7 +108,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     						'numberposts' => 1,
     						'post_type' => 'product',
                             'product_cat' => 'books',
-                            'orderby' => 'ASC',
+                            'orderby' => 'menu_order',
                             'order' => 'ASC',
     					);
     					$asc_posts = get_posts($args);
