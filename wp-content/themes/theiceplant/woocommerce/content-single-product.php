@@ -183,7 +183,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		$attachment_ids = $product->get_gallery_attachment_ids();
 
 		if (!empty($attachment_ids)) {
-            if (!get_field('slider')) {
+            if (!get_field('slider') && !get_field('video')) {
                 echo '<hr>';
             }
 			echo '<div class="image-gallery">';

@@ -23,7 +23,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 if ( !$product->is_in_stock() ) {
-    echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>';
+	if ($product->get_price()) {
+	    echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>';
+	} else {
+	    echo '<br><span class="textNormalSmall out-of-stock">OUT OF PRINT</span>';
+	}
 } else {
 	if ($product->get_price()) {
 		echo apply_filters( 'woocommerce_loop_add_to_cart_link',

@@ -66,6 +66,10 @@ global $product;
 
 <?php else:
 
-	echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>'; 
+	if ($product->get_price()) {
+	    echo '<br><span class="textNormalSmall out-of-stock">OUT OF STOCK</span>';
+	} else {
+	    echo '<br><span class="textNormalSmall out-of-stock">OUT OF PRINT</span>';
+	}
 
 endif; ?>
