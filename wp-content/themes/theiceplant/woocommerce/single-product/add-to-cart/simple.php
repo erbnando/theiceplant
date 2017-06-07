@@ -61,7 +61,7 @@ global $product;
 		<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 
 	<?php } else {
-		echo '<span class="textNormalSmall notavail">NOT AVAILABLE</span>';
+		echo '<span class="textNormalSmall notavail">NOT YET PUBLISHED</span>';
 	} ?>
 
 <?php else:

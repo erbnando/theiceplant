@@ -41,6 +41,6 @@ if ( !$product->is_in_stock() ) {
 			),
 		$product );
 	} else {
-		echo '<span class="textNormalSmall notavail">NOT AVAILABLE</span>';
+		echo '<span class="textNormalSmall notavail">NOT YET PUBLISHED</span>';
 	}
 }
