@@ -94,6 +94,20 @@ button.button.disabled:hover {
 .woocommerce-Price-currencySymbol {
   display: inline !important; }
 
+.error404 .main {
+  position: relative;
+  margin-left: 279px;
+  max-width: 480px;
+  margin-top: 42px;
+  width: 100%; }
+  @media screen and (max-width: 799px) {
+    .error404 .main {
+      margin-left: 0;
+      margin-top: 220px;
+      max-width: none;
+      padding: 0 25px;
+      box-sizing: border-box; } }
+
 .page-template-page-homepage .main {
   position: relative;
   margin-left: 279px;
@@ -264,7 +278,6 @@ button.button.disabled:hover {
         .archive .products .product > div .product-details .button {
           background-color: black;
           color: white;
-          font-family: Arial;
           text-transform: uppercase;
           font-family: 'News Gothic';
           letter-spacing: 1px;
