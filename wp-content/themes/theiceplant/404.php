@@ -21,16 +21,4 @@ get_header(); ?>
 	<p class="textNormal">Page not found. Check out our <a href="<?php echo get_permalink( woocommerce_get_page_id('shop')); ?>">catalog</a>.</p>
 </div>
 
-<?php 
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post(); ?>
-		<div class="main">
-			<?php the_content(); ?>
-		</div>
-		<?php
-	}
-}
-?>
-
 <?php get_footer();
