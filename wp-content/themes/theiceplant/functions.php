@@ -210,7 +210,7 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
      * @param int $deprecated2 Deprecated since WooCommerce 2.0 (default: 0)
      * @return string
      */
-    function woocommerce_get_product_thumbnail( $size = '', $deprecated1 = 0, $deprecated2 = 0 ) {
+    function woocommerce_get_product_thumbnail( $size = 'book-cover', $deprecated1 = 0, $deprecated2 = 0 ) {
         global $post;
         $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
 
@@ -267,5 +267,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 
     return $fragments;
 }
+
+add_image_size( 'book-cover', 350, 386 );
 
 ?>
