@@ -963,6 +963,7 @@ header {
     margin-left: 136px;
     margin-top: 25px;
     height: 160px;
+    width: 140px;
     display: table; }
     header #MainMenu .menu-main-menu-container {
       display: table-cell;
