@@ -951,7 +951,7 @@ button.button.disabled:hover {
     border-radius: 0; }
 
 .variations_form .woocommerce-variation {
-  display: none; }
+  display: none !important; }
 
 header {
   position: absolute;
