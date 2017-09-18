@@ -950,6 +950,9 @@ button.button.disabled:hover {
     border-color: #ccc;
     border-radius: 0; }
 
+.variations_form .woocommerce-variation {
+  display: none; }
+
 header {
   position: absolute;
   top: 0; }
