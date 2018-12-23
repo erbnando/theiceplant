@@ -9,7 +9,7 @@ function wpdocs_theme_name_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'wpdocs_theme_name_scripts' );
 
-add_action('after_setup_theme', 'remove_admin_bar');
+//add_action('after_setup_theme', 'remove_admin_bar');
 
 show_admin_bar(false);
 
@@ -20,7 +20,7 @@ if (  ! function_exists( 'woocommerce_template_loop_product_title' ) ) {
 	 */
 	function woocommerce_template_loop_product_title() {
 		echo '<span class="textBookTitle">' . get_the_title() . '</span>';
-		if(get_field('small_subtitle')) { 
+		if(get_field('small_subtitle')) {
 			echo '<span class="textBookTitle">:<span class="subtitle"> ' . get_field('small_subtitle') . '</span></span>';
 		}
 		if(get_field('subtitle')) {
@@ -227,18 +227,18 @@ if ( ! function_exists( 'woocommerce_get_product_thumbnail' ) ) {
 }
 
 function isa_add_img_title( $attr, $attachment = null ) {
- 
+
     $img_title = trim( strip_tags( $attachment->post_title ) );
- 
+
     $attr['title'] = $img_title;
     $attr['alt'] = $img_title;
- 
+
     return $attr;
 }
 add_filter( 'wp_get_attachment_image_attributes','isa_add_img_title', 10, 2 );
 
 if( function_exists('acf_add_options_page') ) {
-    acf_add_options_page();   
+    acf_add_options_page();
 }
 
 function remove_editor_menu() {
@@ -256,7 +256,7 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
     ob_start();
     if (WC()->cart->get_cart_contents_count() === 0){
     ?>
-        <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>">CART</a>    
+        <a class="cart-contents" href="<?php echo wc_get_cart_url(); ?>">CART</a>
     <?php
     } else {
     ?>
